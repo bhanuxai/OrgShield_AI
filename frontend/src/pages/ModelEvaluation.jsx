@@ -15,9 +15,12 @@ import { api } from '../services/api';
 export default function ModelEvaluation() {
   const [evalData, setEvalData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [activeModelTab, setActiveModelTab] = useState('one_class_svm');
 
-  useEffect(() => {
+  const fetchEvaluation = () => {
+    setLoading(true);
+    setError(null);
     api.getEvaluation()
       .then((data) => {
         setEvalData(data);
@@ -25,14 +28,38 @@ export default function ModelEvaluation() {
           setActiveModelTab(data.best_ml_model_selected);
         }
       })
-      .catch(console.error)
+      .catch((err) => {
+        console.error(err);
+        setError(err.message || 'Unable to retrieve model evaluation benchmarks from backend.');
+      })
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchEvaluation();
   }, []);
 
-  if (loading || !evalData) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center h-64 text-slate-400 font-mono text-sm">
+        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-cyan-400 mr-3"></div>
         Retrieving academic model evaluation benchmarks...
+      </div>
+    );
+  }
+
+  if (error || !evalData) {
+    return (
+      <div className="cyber-card p-8 text-center space-y-4 my-8 max-w-lg mx-auto">
+        <div className="text-rose-400 font-mono text-xs font-semibold">
+          {error || 'Model evaluation benchmark unavailable.'}
+        </div>
+        <button
+          onClick={fetchEvaluation}
+          className="px-4 py-2 text-xs font-mono rounded bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 transition-colors"
+        >
+          Retry Connection
+        </button>
       </div>
     );
   }

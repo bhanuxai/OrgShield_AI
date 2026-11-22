@@ -247,6 +247,13 @@ export default function Overview({ onNavigateToInvestigation }) {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60">
+              {(!summary.recent_alerts || summary.recent_alerts.length === 0) && (
+                <tr>
+                  <td colSpan={6} className="py-6 text-center text-slate-500 font-mono text-xs">
+                    No security alerts recorded yet. Scan an email in the Email Investigation module to populate alerts.
+                  </td>
+                </tr>
+              )}
               {summary.recent_alerts?.map((alert) => (
                 <tr key={alert.alert_id} className="hover:bg-slate-800/30 transition-colors">
                   <td className="py-3 px-3 font-mono text-cyan-400 font-medium">{alert.alert_id}</td>

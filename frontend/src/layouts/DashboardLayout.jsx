@@ -25,12 +25,29 @@ const NAV_ITEMS = [
 ];
 
 export default function DashboardLayout({ activeTab, onSelectTab, children }) {
-  const [health, setHealth] = useState({ status: 'connecting', models_loaded: false, active_model: 'isolation_forest' });
+  const [healthInfo, setHealthInfo] = useState({
+    state: 'connecting',
+    label: 'CONNECTING',
+    message: 'Connecting to backend...',
+    active_model: 'one_class_svm'
+  });
+
+  const refreshHealth = () => {
+    api.checkHealthDetailed()
+      .then(setHealthInfo)
+      .catch(() => setHealthInfo({
+        state: 'offline',
+        label: 'OFFLINE',
+        message: 'Backend unreachable',
+        active_model: 'offline'
+      }));
+  };
 
   useEffect(() => {
-    api.getHealth()
-      .then(setHealth)
-      .catch(() => setHealth({ status: 'offline', models_loaded: false, active_model: 'offline' }));
+    refreshHealth();
+    // Periodically re-check health every 30 seconds
+    const interval = setInterval(refreshHealth, 30000);
+    return () => clearInterval(interval);
   }, [activeTab]);
 
   return (
@@ -82,10 +99,20 @@ export default function DashboardLayout({ activeTab, onSelectTab, children }) {
                 Backend Engine
               </span>
               <span className={`inline-flex items-center gap-1 font-mono text-[10px] ${
-                health.status === 'healthy' ? 'text-emerald-400' : 'text-amber-400'
+                healthInfo.state === 'healthy' ? 'text-emerald-400' :
+                healthInfo.state === 'connecting' ? 'text-cyan-400' :
+                healthInfo.state === 'unhealthy' ? 'text-amber-400' :
+                healthInfo.state === 'timeout' ? 'text-amber-400' :
+                'text-rose-400'
               }`}>
-                <span className={`h-1.5 w-1.5 rounded-full ${health.status === 'healthy' ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
-                {health.status === 'healthy' ? 'READY' : health.status.toUpperCase()}
+                <span className={`h-1.5 w-1.5 rounded-full ${
+                  healthInfo.state === 'healthy' ? 'bg-emerald-400 animate-pulse' :
+                  healthInfo.state === 'connecting' ? 'bg-cyan-400 animate-pulse' :
+                  healthInfo.state === 'unhealthy' ? 'bg-amber-400' :
+                  healthInfo.state === 'timeout' ? 'bg-amber-400' :
+                  'bg-rose-400'
+                }`} />
+                {healthInfo.label}
               </span>
             </div>
             <div className="flex items-center justify-between text-slate-400">
@@ -93,8 +120,8 @@ export default function DashboardLayout({ activeTab, onSelectTab, children }) {
                 <Activity className="h-3 w-3 text-slate-500" />
                 Active Model
               </span>
-              <span className="font-mono text-[10px] text-cyan-400 truncate max-w-[90px]">
-                {health.active_model.replace('_', ' ')}
+              <span className="font-mono text-[10px] text-cyan-400 truncate max-w-[90px]" title={healthInfo.active_model}>
+                {healthInfo.active_model.replace('_', ' ')}
               </span>
             </div>
           </div>
@@ -113,9 +140,25 @@ export default function DashboardLayout({ activeTab, onSelectTab, children }) {
           </div>
 
           <div className="flex items-center gap-3 text-xs">
+            {/* Live API Health Badge */}
+            <div className={`hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg border font-mono text-[11px] ${
+              healthInfo.state === 'healthy'
+                ? 'bg-emerald-950/40 border-emerald-800/60 text-emerald-400'
+                : healthInfo.state === 'connecting'
+                ? 'bg-cyan-950/40 border-cyan-800/60 text-cyan-400'
+                : 'bg-rose-950/40 border-rose-800/60 text-rose-400'
+            }`}>
+              <span className={`h-2 w-2 rounded-full ${
+                healthInfo.state === 'healthy' ? 'bg-emerald-400' :
+                healthInfo.state === 'connecting' ? 'bg-cyan-400 animate-pulse' :
+                'bg-rose-400'
+              }`} />
+              <span>API: {healthInfo.message}</span>
+            </div>
+
             <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 font-mono">
               <span className="h-2 w-2 rounded-full bg-cyan-400" />
-              <span>Target: Enron Org (enron.com)</span>
+              <span>Target: enron.com</span>
             </div>
             <div className="px-3 py-1.5 rounded-lg bg-cyan-950/60 border border-cyan-800/60 text-cyan-400 font-mono font-medium">
               Mode: Unsupervised Threat Discovery

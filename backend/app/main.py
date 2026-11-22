@@ -44,18 +44,26 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# CORS Middleware with configurable environment variable support
+# CORS Middleware with strict production origins and local development support
+default_origins = {
+    "https://org-shield-ai.vercel.app",
+    "https://orgshield-ai.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+}
+
+# Configurable environment variable support for additional comma-separated origins
 cors_env = os.environ.get("CORS_ORIGINS", "").strip()
 if cors_env:
-    allowed_origins = [orig.strip() for orig in cors_env.split(",") if orig.strip()]
-else:
-    allowed_origins = [
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "*"
-    ]
+    for orig in cors_env.split(","):
+        cleaned = orig.strip()
+        if cleaned and cleaned != "*":
+            # Strip trailing slash so browser Origin headers match strictly
+            default_origins.add(cleaned.rstrip("/"))
+
+allowed_origins = sorted(list(default_origins))
 
 app.add_middleware(
     CORSMiddleware,

@@ -19,8 +19,11 @@ export default function Settings() {
   const [saving, setSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchSettings = () => {
+    setLoading(true);
+    setError(null);
     Promise.all([
       api.getSettings(),
       api.getDatasetStats(),
@@ -37,8 +40,15 @@ export default function Settings() {
           setActiveModel(sData.active_model.value);
         }
       })
-      .catch(console.error)
+      .catch((err) => {
+        console.error(err);
+        setError(err.message || 'Unable to retrieve settings from backend.');
+      })
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchSettings();
   }, []);
 
   const handleSaveSettings = async (e) => {
@@ -62,7 +72,22 @@ export default function Settings() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64 text-slate-400 font-mono text-sm">
+        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-cyan-400 mr-3"></div>
         Loading system configuration...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="cyber-card p-8 text-center space-y-4 my-8 max-w-lg mx-auto">
+        <div className="text-rose-400 font-mono text-xs font-semibold">{error}</div>
+        <button
+          onClick={fetchSettings}
+          className="px-4 py-2 text-xs font-mono rounded bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 transition-colors"
+        >
+          Retry Connection
+        </button>
       </div>
     );
   }

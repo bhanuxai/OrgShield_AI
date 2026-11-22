@@ -17,6 +17,7 @@ export default function ThreatInbox({ onNavigateToInvestigation }) {
   const [alerts, setAlerts] = useState([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSeverity, setSelectedSeverity] = useState('ALL');
   const [threatOnly, setThreatOnly] = useState(false);
@@ -25,6 +26,7 @@ export default function ThreatInbox({ onNavigateToInvestigation }) {
 
   const loadAlerts = () => {
     setLoading(true);
+    setError(null);
     api.getAlerts({
       limit,
       offset,
@@ -36,7 +38,10 @@ export default function ThreatInbox({ onNavigateToInvestigation }) {
         setAlerts(data.alerts || []);
         setTotal(data.total || 0);
       })
-      .catch(console.error)
+      .catch((err) => {
+        console.error(err);
+        setError(err.message || 'Failed to load threat inbox records.');
+      })
       .finally(() => setLoading(false));
   };
 
@@ -117,6 +122,16 @@ export default function ThreatInbox({ onNavigateToInvestigation }) {
         {loading ? (
           <div className="flex items-center justify-center h-48 text-slate-400 font-mono text-xs">
             Querying threat records...
+          </div>
+        ) : error ? (
+          <div className="p-8 text-center space-y-3">
+            <div className="text-rose-400 font-mono text-xs font-semibold">{error}</div>
+            <button
+              onClick={loadAlerts}
+              className="px-4 py-1.5 text-xs font-mono rounded bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 transition-colors"
+            >
+              Retry Loading Records
+            </button>
           </div>
         ) : alerts.length === 0 ? (
           <div className="flex items-center justify-center h-48 text-slate-500 font-mono text-xs">

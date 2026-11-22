@@ -70,7 +70,7 @@ export default function EmailInvestigation({ initialAlertId }) {
             risk_score: alert.risk_score,
             risk_category: alert.risk_category,
             is_threat: alert.is_threat,
-            threshold: 0.4819,
+            threshold: alert.threshold || 0.7912,
             model_used: alert.model_used,
             explanation: alert.explanation,
             anomaly_indicators: alert.anomaly_indicators || [],
@@ -90,7 +90,10 @@ export default function EmailInvestigation({ initialAlertId }) {
           setSubject(alert.subject || '');
           setBody(alert.body_snippet || '');
         })
-        .catch(console.error);
+        .catch((err) => {
+          console.error(err);
+          setErrorMsg('Failed to load alert details: ' + (err.message || 'Network error'));
+        });
     }
   }, [initialAlertId]);
 

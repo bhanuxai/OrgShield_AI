@@ -17,8 +17,11 @@ export default function ForensicIntelligence() {
   const [alerts, setAlerts] = useState([]);
   const [selectedAlert, setSelectedAlert] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchAlerts = () => {
+    setLoading(true);
+    setError(null);
     api.getAlerts({ limit: 20 })
       .then((data) => {
         const list = data.alerts || [];
@@ -27,14 +30,36 @@ export default function ForensicIntelligence() {
           setSelectedAlert(list[0]);
         }
       })
-      .catch(console.error)
+      .catch((err) => {
+        console.error(err);
+        setError(err.message || 'Unable to retrieve forensic records from backend.');
+      })
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchAlerts();
   }, []);
 
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64 text-slate-400 font-mono text-sm">
+        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-cyan-400 mr-3"></div>
         Loading forensic records...
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="cyber-card p-8 text-center space-y-4 my-8 max-w-lg mx-auto">
+        <div className="text-rose-400 font-mono text-xs font-semibold">{error}</div>
+        <button
+          onClick={fetchAlerts}
+          className="px-4 py-2 text-xs font-mono rounded bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 transition-colors"
+        >
+          Retry Connection
+        </button>
       </div>
     );
   }
@@ -66,6 +91,11 @@ export default function ForensicIntelligence() {
         <div className="cyber-card p-4 lg:col-span-1 space-y-3">
           <h3 className="text-xs font-semibold text-white tracking-wider uppercase mb-2">Select Scanned Message</h3>
           <div className="space-y-2 max-h-[600px] overflow-y-auto pr-1">
+            {alerts.length === 0 && (
+              <div className="text-slate-500 text-xs font-mono p-4 text-center">
+                No alerts available in audit queue.
+              </div>
+            )}
             {alerts.map((alt) => {
               const isSelected = selectedAlert?.alert_id === alt.alert_id;
               return (
