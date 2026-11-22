@@ -1,0 +1,58 @@
+{
+  "readable_emails": 6000,
+  "malformed_emails": 0,
+  "unique_senders": 1609,
+  "unique_recipients": 8325,
+  "missing_stats": {
+    "missing_subject": 236,
+    "missing_to": 430
+  },
+  "top_users": [
+    [
+      "allen-p",
+      50
+    ],
+    [
+      "arnold-j",
+      50
+    ],
+    [
+      "arora-h",
+      50
+    ],
+    [
+      "badeer-r",
+      50
+    ],
+    [
+      "bailey-s",
+      50
+    ],
+    [
+      "bass-e",
+      50
+    ],
+    [
+      "baughman-d",
+      50
+    ],
+    [
+      "beck-s",
+      50
+    ],
+    [
+      "benson-r",
+      50
+    ],
+    [
+      "blair-l",
+      50
+    ]
+  ],
+  "url_stats": {
+    "total_urls_found": 15702,
+    "emails_with_urls": 2513,
+    "emails_with_ip_urls": 30,
+    "emails_with_suspicious_urls": 61
+  }
+}

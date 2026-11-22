@@ -1,0 +1,235 @@
+{
+  "dataset_root": "enron_mail_20150507_final\\maildir",
+  "total_users_in_dataset": 150,
+  "sampled_users_count": 121,
+  "total_scanned_sample": 6000,
+  "readable_emails_count": 6000,
+  "malformed_emails_count": 0,
+  "unique_senders_count": 1609,
+  "unique_recipients_count": 8325,
+  "unique_sender_domains_count": 397,
+  "duplicate_message_ids_count": 0,
+  "duplicate_content_hashes_count": 259,
+  "missing_field_statistics": {
+    "missing_subject": 236,
+    "missing_to": 430
+  },
+  "header_presence_statistics": {
+    "has_x_origin": 5997,
+    "has_x_folder": 5997
+  },
+  "url_statistics": {
+    "total_urls_found": 15702,
+    "emails_with_urls": 2513,
+    "emails_with_ip_urls": 30,
+    "emails_with_suspicious_urls": 61
+  },
+  "top_10_users_by_volume": [
+    [
+      "allen-p",
+      50
+    ],
+    [
+      "arnold-j",
+      50
+    ],
+    [
+      "arora-h",
+      50
+    ],
+    [
+      "badeer-r",
+      50
+    ],
+    [
+      "bailey-s",
+      50
+    ],
+    [
+      "bass-e",
+      50
+    ],
+    [
+      "baughman-d",
+      50
+    ],
+    [
+      "beck-s",
+      50
+    ],
+    [
+      "benson-r",
+      50
+    ],
+    [
+      "blair-l",
+      50
+    ]
+  ],
+  "top_10_sender_domains": [
+    [
+      "enron.com",
+      4837
+    ],
+    [
+      "aol.com",
+      48
+    ],
+    [
+      "apsc.com",
+      34
+    ],
+    [
+      "accenture.com",
+      33
+    ],
+    [
+      "hotmail.com",
+      29
+    ],
+    [
+      "caiso.com",
+      28
+    ],
+    [
+      "reliantenergy.com",
+      26
+    ],
+    [
+      "dictionary.com",
+      23
+    ],
+    [
+      "nytimes.com",
+      22
+    ],
+    [
+      "nisource.com",
+      17
+    ]
+  ],
+  "email_distribution_by_year_month": {
+    "1979-12": 9,
+    "1999-04": 1,
+    "1999-05": 1,
+    "1999-07": 4,
+    "1999-09": 4,
+    "1999-10": 7,
+    "1999-11": 6,
+    "1999-12": 10,
+    "2000-01": 24,
+    "2000-02": 65,
+    "2000-03": 100,
+    "2000-04": 27,
+    "2000-05": 108,
+    "2000-06": 52,
+    "2000-07": 213,
+    "2000-08": 206,
+    "2000-09": 302,
+    "2000-10": 237,
+    "2000-11": 510,
+    "2000-12": 490,
+    "2001-01": 290,
+    "2001-02": 240,
+    "2001-03": 315,
+    "2001-04": 385,
+    "2001-05": 508,
+    "2001-06": 186,
+    "2001-07": 95,
+    "2001-08": 75,
+    "2001-09": 98,
+    "2001-10": 604,
+    "2001-11": 164,
+    "2001-12": 97,
+    "2002-01": 336,
+    "2002-02": 80,
+    "2002-03": 23,
+    "2002-04": 71,
+    "2002-05": 27,
+    "2002-06": 25,
+    "2002-09": 3,
+    "2004-02": 2
+  },
+  "corpus_contamination_notes": {
+    "detected_count": 30,
+    "summary": "The Enron corpus includes real-world historical unsolicited emails, commercial offers, lottery marketing, and IP-addressed communications received by employees.",
+    "examples": [
+      {
+        "file": "enron_mail_20150507_final\\maildir\\allen-p\\all_documents\\134_",
+        "sender": "phillip.allen@enron.com",
+        "subject": "",
+        "suspicious_indicators": {
+          "ip_urls": [],
+          "suspicious_urls": [
+            "http://www.hearme.com/vc2/?chnlOwnr=pallen@enron.com"
+          ],
+          "reply_to_mismatch": false
+        }
+      },
+      {
+        "file": "enron_mail_20150507_final\\maildir\\crandell-s\\deleted_items\\43_",
+        "sender": "reports@reedwasden.com",
+        "subject": "Global Energy 1/29/02",
+        "suspicious_indicators": {
+          "ip_urls": [],
+          "suspicious_urls": [
+            "http://www.reedwasden.com/members/download.asp?ID=111&email=sean.crandall@enron.com"
+          ],
+          "reply_to_mismatch": false
+        }
+      },
+      {
+        "file": "enron_mail_20150507_final\\maildir\\delainey-d\\all_documents\\145_",
+        "sender": "david.delainey@enron.com",
+        "subject": "ENW Holiday Party Online Invitation",
+        "suspicious_indicators": {
+          "ip_urls": [
+            "http://207.21.193.94/Extravaganza.html"
+          ],
+          "suspicious_urls": [
+            "http://207.21.193.94/Extravaganza.html"
+          ],
+          "reply_to_mismatch": false
+        }
+      },
+      {
+        "file": "enron_mail_20150507_final\\maildir\\donoho-l\\deleted_items\\106_",
+        "sender": "jjill@clickaction.net",
+        "subject": "Free shipping on spring styles!",
+        "suspicious_indicators": {
+          "ip_urls": [
+            "http://208.50.155.100/ClickAction?func=S_TurnOffHtml&partname=jjill&uid=81149427"
+          ],
+          "suspicious_urls": [
+            "http://208.50.155.100/ClickAction?func=S_TurnOffHtml&partname=jjill&uid=81149427"
+          ],
+          "reply_to_mismatch": false
+        }
+      },
+      {
+        "file": "enron_mail_20150507_final\\maildir\\donoho-l\\deleted_items\\109_",
+        "sender": "events@eyeforenergy.com",
+        "subject": "EEO Europe: Energy Trading in the New Economy",
+        "suspicious_indicators": {
+          "ip_urls": [
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45ab5c",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45ab3a",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45aa60",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45aa40",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45a317",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45ab4f"
+          ],
+          "suspicious_urls": [
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45ab5c",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45ab3a",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45aa60",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45aa40",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45a317",
+            "http://193.128.182.100:8081/ss?click&eyeforenergy&3c45ab4f"
+          ],
+          "reply_to_mismatch": false
+        }
+      }
+    ]
+  }
+}

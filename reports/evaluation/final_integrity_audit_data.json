@@ -1,0 +1,210 @@
+{
+  "dataset_verification": {
+    "nazario": {
+      "path": "ml\\data\\external\\nazario_phishing0.mbox",
+      "sha256": "6184b0a34ed8cbbb252676e21c1eab9eac5fa4be89c61e30cc9954ebbb25d848",
+      "size_bytes": 3119972,
+      "total_parsed": 414,
+      "valid_dates_count": 414,
+      "missing_or_invalid_dates": 0,
+      "min_date": "1970-01-03T14:43:14+00:00",
+      "max_date": "2005-06-13T14:15:23+00:00",
+      "duplicate_count": 122,
+      "unique_hashes": 292
+    },
+    "enron_sample": {
+      "total_parsed": 6000,
+      "valid_dates_count": 6000,
+      "missing_or_invalid_dates": 0,
+      "min_date": "1980-01-01T00:00:00+00:00",
+      "max_date": "2004-02-04T02:23:47+00:00",
+      "duplicate_count": 256,
+      "unique_hashes": 5744
+    },
+    "synthetic_benchmark": {
+      "path": "ml\\data\\phishing_benchmark.json",
+      "sha256": "3e25dada815ef6fc0a18d07f71506d81bc47e00085ce88d6b479349919f0f8f9",
+      "sample_count": 100
+    },
+    "overlap_analysis": {
+      "synthetic_nazario_hash_overlap": 0,
+      "synthetic_nazario_subject_overlap": 0,
+      "enron_nazario_hash_overlap": 0
+    }
+  },
+  "domain_shift_analysis": {
+    "enron_vocab_size": 40,
+    "nazario_unique_tokens": 5005,
+    "nazario_tokens_absent": 4985,
+    "pct_nazario_tokens_absent": 99.6,
+    "enron_nonzero_tfidf": {
+      "mean": 6.948,
+      "std": 6.255,
+      "median": 5.0
+    },
+    "nazario_nonzero_tfidf": {
+      "mean": 5.157,
+      "std": 2.943,
+      "median": 5.0
+    },
+    "sender_domains": {
+      "enron_unseen_pct": 3.89,
+      "nazario_unseen_pct": 82.61
+    },
+    "header_statistics": {
+      "enron_test": {
+        "missing_subject": 33,
+        "missing_date": 0,
+        "missing_reply_to": 899,
+        "missing_message_id": 0,
+        "total_count": 899
+      },
+      "nazario": {
+        "missing_subject": 0,
+        "missing_date": 0,
+        "missing_reply_to": 236,
+        "missing_message_id": 0,
+        "total_count": 414
+      }
+    },
+    "risk_score_distributions": {
+      "enron_normal": {
+        "min": 0.0066,
+        "p25": 0.1365,
+        "median": 0.2162,
+        "mean": 0.2509,
+        "std": 0.1717,
+        "p75": 0.3278,
+        "p95": 0.5776,
+        "p99": 0.7904,
+        "max": 0.924
+      },
+      "nazario_phishing": {
+        "min": 0.0699,
+        "p25": 0.4286,
+        "median": 0.5414,
+        "mean": 0.5551,
+        "std": 0.205,
+        "p75": 0.6839,
+        "p95": 0.9184,
+        "p99": 0.9395,
+        "max": 0.9494
+      },
+      "synthetic_phishing": {
+        "min": 0.731,
+        "p25": 0.8824,
+        "median": 0.9108,
+        "mean": 0.9035,
+        "std": 0.0491,
+        "p75": 0.94,
+        "p95": 0.9581,
+        "p99": 0.9581,
+        "max": 0.9581
+      }
+    }
+  },
+  "metric_verification": {
+    "calibrated_threshold": 0.7912,
+    "synthetic_benchmark": {
+      "threshold": 0.7912,
+      "detection_rate_pct": 97.0,
+      "false_positives_per_1000": 10.01,
+      "precision": 0.9151,
+      "recall": 0.97,
+      "f1_score": 0.9417,
+      "pr_auc": 0.9764,
+      "roc_auc": 0.9977,
+      "confusion_matrix": {
+        "true_negatives": 890,
+        "false_positives": 9,
+        "false_negatives": 3,
+        "true_positives": 97,
+        "matrix_2x2": [
+          [
+            890,
+            9
+          ],
+          [
+            3,
+            97
+          ]
+        ]
+      },
+      "sample_counts": {
+        "total_evaluated": 999,
+        "normal_test_count": 899,
+        "phishing_test_count": 100
+      }
+    },
+    "synthetic_verified_against_saved": true,
+    "external_nazario_benchmark": {
+      "threshold": 0.7912,
+      "detection_rate_pct": 16.18,
+      "false_positives_per_1000": 10.01,
+      "precision": 0.8816,
+      "recall": 0.1618,
+      "f1_score": 0.2735,
+      "pr_auc": 0.7509,
+      "roc_auc": 0.8716,
+      "confusion_matrix": {
+        "true_negatives": 890,
+        "false_positives": 9,
+        "false_negatives": 347,
+        "true_positives": 67,
+        "matrix_2x2": [
+          [
+            890,
+            9
+          ],
+          [
+            347,
+            67
+          ]
+        ]
+      },
+      "sample_counts": {
+        "total_evaluated": 1313,
+        "normal_test_count": 899,
+        "phishing_test_count": 414
+      }
+    },
+    "external_verified_against_saved": true
+  },
+  "model_integrity": {
+    "model_files": {
+      "one_class_svm.joblib": {
+        "sha256": "7ced4b3df601f0ebfdd059c13f52b983ea1ec457a5ff199cbc8fa08968da56b5",
+        "size_bytes": 127711,
+        "modified_time_utc": "2026-11-22T11:39:56.902555+00:00"
+      },
+      "isolation_forest.joblib": {
+        "sha256": "bb06a9db25fbf340b6526bd74de4ebaa202ad8dfad4d5ed3ac8d604ac3a5a8d4",
+        "size_bytes": 1097865,
+        "modified_time_utc": "2026-11-22T11:39:56.898724+00:00"
+      },
+      "local_outlier_factor.joblib": {
+        "sha256": "8cd8ae4960333a379e03ebf6b69064b2aca946fc18af3bf74b9a846b0f23f335",
+        "size_bytes": 3462542,
+        "modified_time_utc": "2026-11-22T11:39:56.909669+00:00"
+      },
+      "feature_extractor.joblib": {
+        "sha256": "877fb78b2df2333d79b0ae630fc0e259959804cab622eea21cdf46551d94f344",
+        "size_bytes": 621303,
+        "modified_time_utc": "2026-11-22T11:39:56.791540+00:00"
+      },
+      "scaler.joblib": {
+        "sha256": "36eaa1419ff82af306d238aceb4de745626ffe46eb93b33627beac1428230b37",
+        "size_bytes": 2407,
+        "modified_time_utc": "2026-11-22T11:39:56.794439+00:00"
+      },
+      "model_metadata.json": {
+        "sha256": "a970f50f515076fed4129aac263b444daab4063ac5f0ce0901f4a004516aaf4d",
+        "size_bytes": 2150,
+        "modified_time_utc": "2026-11-22T11:39:56.910665+00:00"
+      }
+    },
+    "active_best_model": "one_class_svm",
+    "calibrated_threshold": 0.7912,
+    "zero_phishing_training_verified": true
+  }
+}

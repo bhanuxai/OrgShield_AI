@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: orgshield-ai-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHONPATH
+        value: .
+      - key: APP_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: MODEL_DIR
+        value: ml/models_store
+      - key: DATABASE_PATH
+        value: backend/app/database/orgshield.db
+    # Note on Storage:
+    # On Render Free Tier, the filesystem is ephemeral and the SQLite database resets on service restart.
+    # To persist scan history permanently across restarts, upgrade to Render Starter and attach a disk:
+    # disk:
+    #   name: orgshield-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
+    # Then update DATABASE_PATH to /var/data/orgshield.db

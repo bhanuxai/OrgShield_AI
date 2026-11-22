@@ -1,0 +1,139 @@
+{
+  "benchmark_metadata": {
+    "name": "Jose Nazario Phishing Corpus (phishing0.mbox)",
+    "source_url": "https://monkey.org/~jose/phishing/",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "curator": "Dr. Jose Nazario",
+    "collection_period": "November 2004 - June 2005",
+    "format": "RFC 2822 standard UNIX mbox",
+    "phishing_sample_count": 414,
+    "normal_sample_count": 899,
+    "total_evaluated": 1313
+  },
+  "models": {
+    "one_class_svm": {
+      "threshold": 0.7912,
+      "detection_rate_pct": 16.18,
+      "false_positives_per_1000": 10.01,
+      "precision": 0.8816,
+      "recall": 0.1618,
+      "f1_score": 0.2735,
+      "pr_auc": 0.7509,
+      "roc_auc": 0.8716,
+      "confusion_matrix": {
+        "true_negatives": 890,
+        "false_positives": 9,
+        "false_negatives": 347,
+        "true_positives": 67,
+        "matrix_2x2": [
+          [
+            890,
+            9
+          ],
+          [
+            347,
+            67
+          ]
+        ]
+      },
+      "sample_counts": {
+        "total_evaluated": 1313,
+        "normal_test_count": 899,
+        "phishing_test_count": 414
+      }
+    },
+    "isolation_forest": {
+      "threshold": 0.5256,
+      "detection_rate_pct": 1.21,
+      "false_positives_per_1000": 8.9,
+      "precision": 0.3846,
+      "recall": 0.0121,
+      "f1_score": 0.0234,
+      "pr_auc": 0.5656,
+      "roc_auc": 0.8064,
+      "confusion_matrix": {
+        "true_negatives": 891,
+        "false_positives": 8,
+        "false_negatives": 409,
+        "true_positives": 5,
+        "matrix_2x2": [
+          [
+            891,
+            8
+          ],
+          [
+            409,
+            5
+          ]
+        ]
+      },
+      "sample_counts": {
+        "total_evaluated": 1313,
+        "normal_test_count": 899,
+        "phishing_test_count": 414
+      }
+    },
+    "local_outlier_factor": {
+      "threshold": 0.5988,
+      "detection_rate_pct": 7.97,
+      "false_positives_per_1000": 10.01,
+      "precision": 0.7857,
+      "recall": 0.0797,
+      "f1_score": 0.1447,
+      "pr_auc": 0.5953,
+      "roc_auc": 0.8001,
+      "confusion_matrix": {
+        "true_negatives": 890,
+        "false_positives": 9,
+        "false_negatives": 381,
+        "true_positives": 33,
+        "matrix_2x2": [
+          [
+            890,
+            9
+          ],
+          [
+            381,
+            33
+          ]
+        ]
+      },
+      "sample_counts": {
+        "total_evaluated": 1313,
+        "normal_test_count": 899,
+        "phishing_test_count": 414
+      }
+    },
+    "rule_based_baseline": {
+      "threshold": 0.45,
+      "detection_rate_pct": 0.97,
+      "false_positives_per_1000": 1.11,
+      "precision": 0.8,
+      "recall": 0.0097,
+      "f1_score": 0.0191,
+      "pr_auc": 0.5985,
+      "roc_auc": 0.6281,
+      "confusion_matrix": {
+        "true_negatives": 898,
+        "false_positives": 1,
+        "false_negatives": 410,
+        "true_positives": 4,
+        "matrix_2x2": [
+          [
+            898,
+            1
+          ],
+          [
+            410,
+            4
+          ]
+        ]
+      },
+      "sample_counts": {
+        "total_evaluated": 1313,
+        "normal_test_count": 899,
+        "phishing_test_count": 414
+      }
+    }
+  }
+}

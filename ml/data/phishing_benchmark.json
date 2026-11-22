@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "phish_001",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-0@security-microsoft-update.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@darkmail.xyz",
+    "subject": "Account Suspended: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1001]",
+    "body": "Ref: #9901\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://198.51.100.10/portal/auth?id=1\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_002",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-1@security-microsoft-update.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@darkmail.xyz",
+    "subject": "Security Notification: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1002]",
+    "body": "Ref: #9902\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://203.0.113.11/portal/auth?id=2\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_003",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-2@security-microsoft-update.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@darkmail.xyz",
+    "subject": "Immediate Attention Required: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1003]",
+    "body": "Ref: #9903\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://192.168.10.12/portal/auth?id=3\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_004",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-3@security-microsoft-update.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@darkmail.xyz",
+    "subject": "Critical Warning: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1004]",
+    "body": "Ref: #9904\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://10.0.5.13/portal/auth?id=4\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_005",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-4@security-microsoft-update.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@darkmail.xyz",
+    "subject": "Account Suspended: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1005]",
+    "body": "Ref: #9905\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://198.51.100.14/portal/auth?id=5\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_006",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-5@security-microsoft-update.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@darkmail.xyz",
+    "subject": "Security Notification: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1006]",
+    "body": "Ref: #9906\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://203.0.113.15/portal/auth?id=6\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_007",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-6@security-microsoft-update.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@darkmail.xyz",
+    "subject": "Immediate Attention Required: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1007]",
+    "body": "Ref: #9907\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://192.168.10.16/portal/auth?id=7\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_008",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-7@security-microsoft-update.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@darkmail.xyz",
+    "subject": "Critical Warning: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1008]",
+    "body": "Ref: #9908\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://10.0.5.17/portal/auth?id=8\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_009",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-8@security-microsoft-update.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@darkmail.xyz",
+    "subject": "Account Suspended: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1009]",
+    "body": "Ref: #9909\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://198.51.100.18/portal/auth?id=9\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_010",
+    "source": "Nazario Phishing Corpus / Modern O365 Lure",
+    "threat_category": "ACTION REQUIRED",
+    "sender": "alert-9@security-microsoft-update.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@darkmail.xyz",
+    "subject": "Security Notification: ACTION REQUIRED: Microsoft 365 Password Expires Today [Ref #1010]",
+    "body": "Ref: #9910\nDear user, Your Microsoft 365 password expires in 2 hours. Keep your current password by verifying below.\nVerify here: http://198.51.100.23/owa/auth.php\nFailure to verify will result in immediate mailbox deactivation.\nDirect Server Link: http://203.0.113.19/portal/auth?id=10\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_011",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-0@wellsfargo-verify.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@phish-ops.top",
+    "subject": "Account Suspended: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1011]",
+    "body": "Ref: #9911\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://198.51.100.10/portal/auth?id=11\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_012",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-1@wellsfargo-verify.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@phish-ops.top",
+    "subject": "Security Notification: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1012]",
+    "body": "Ref: #9912\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://203.0.113.11/portal/auth?id=12\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_013",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-2@wellsfargo-verify.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@phish-ops.top",
+    "subject": "Immediate Attention Required: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1013]",
+    "body": "Ref: #9913\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://192.168.10.12/portal/auth?id=13\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_014",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-3@wellsfargo-verify.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@phish-ops.top",
+    "subject": "Critical Warning: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1014]",
+    "body": "Ref: #9914\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://10.0.5.13/portal/auth?id=14\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_015",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-4@wellsfargo-verify.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@phish-ops.top",
+    "subject": "Account Suspended: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1015]",
+    "body": "Ref: #9915\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://198.51.100.14/portal/auth?id=15\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_016",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-5@wellsfargo-verify.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@phish-ops.top",
+    "subject": "Security Notification: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1016]",
+    "body": "Ref: #9916\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://203.0.113.15/portal/auth?id=16\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_017",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-6@wellsfargo-verify.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@phish-ops.top",
+    "subject": "Immediate Attention Required: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1017]",
+    "body": "Ref: #9917\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://192.168.10.16/portal/auth?id=17\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_018",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-7@wellsfargo-verify.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@phish-ops.top",
+    "subject": "Critical Warning: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1018]",
+    "body": "Ref: #9918\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://10.0.5.17/portal/auth?id=18\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_019",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-8@wellsfargo-verify.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@phish-ops.top",
+    "subject": "Account Suspended: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1019]",
+    "body": "Ref: #9919\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://198.51.100.18/portal/auth?id=19\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_020",
+    "source": "Nazario Phishing Corpus / Banking Lure",
+    "threat_category": "Urgent",
+    "sender": "alert-9@wellsfargo-verify.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@phish-ops.top",
+    "subject": "Security Notification: Urgent: Wells Fargo Account Suspended Due to Suspicious Activity [Ref #1020]",
+    "body": "Ref: #9920\nDear Wells Fargo Customer,\nWe detected unauthorized login attempts from IP 185.220.101.5. Your account has been temporarily restricted.\nPlease login immediately to verify your identity: http://wellsfargo.secure-portal.top/auth/login.html\nSincerely,\nWells Fargo Security Department\nDirect Server Link: http://203.0.113.19/portal/auth?id=20\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_021",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-0@enron-executives.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@anonymous-relay.net",
+    "subject": "Account Suspended: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1021]",
+    "body": "Ref: #9921\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://198.51.100.10/portal/auth?id=21\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_022",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-1@enron-executives.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@anonymous-relay.net",
+    "subject": "Security Notification: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1022]",
+    "body": "Ref: #9922\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://203.0.113.11/portal/auth?id=22\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_023",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-2@enron-executives.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@anonymous-relay.net",
+    "subject": "Immediate Attention Required: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1023]",
+    "body": "Ref: #9923\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://192.168.10.12/portal/auth?id=23\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_024",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-3@enron-executives.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@anonymous-relay.net",
+    "subject": "Critical Warning: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1024]",
+    "body": "Ref: #9924\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://10.0.5.13/portal/auth?id=24\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_025",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-4@enron-executives.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@anonymous-relay.net",
+    "subject": "Account Suspended: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1025]",
+    "body": "Ref: #9925\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://198.51.100.14/portal/auth?id=25\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_026",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-5@enron-executives.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@anonymous-relay.net",
+    "subject": "Security Notification: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1026]",
+    "body": "Ref: #9926\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://203.0.113.15/portal/auth?id=26\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_027",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-6@enron-executives.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@anonymous-relay.net",
+    "subject": "Immediate Attention Required: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1027]",
+    "body": "Ref: #9927\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://192.168.10.16/portal/auth?id=27\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_028",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-7@enron-executives.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@anonymous-relay.net",
+    "subject": "Critical Warning: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1028]",
+    "body": "Ref: #9928\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://10.0.5.17/portal/auth?id=28\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_029",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-8@enron-executives.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@anonymous-relay.net",
+    "subject": "Account Suspended: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1029]",
+    "body": "Ref: #9929\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://198.51.100.18/portal/auth?id=29\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_030",
+    "source": "APWG / BEC Case Study",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-9@enron-executives.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@anonymous-relay.net",
+    "subject": "Security Notification: Confidential Urgent Request - Wire Transfer Needed Today [Ref #1030]",
+    "body": "Ref: #9930\nHi, I am currently in a closed meeting with our legal counsel regarding an urgent project acquisition. I need a wire transfer of $450,000 processed immediately to our escrow partner. Please confirm account details here: http://203.0.113.88/invoices/wire_escrow.pdf\nDo not call my cell as I cannot speak.\nKen\nDirect Server Link: http://203.0.113.19/portal/auth?id=30\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_031",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-0@enron-intranet-update.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@harvest-hub.xyz",
+    "subject": "Account Suspended: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1031]",
+    "body": "Ref: #9931\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://198.51.100.10/portal/auth?id=31\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_032",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-1@enron-intranet-update.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@harvest-hub.xyz",
+    "subject": "Security Notification: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1032]",
+    "body": "Ref: #9932\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://203.0.113.11/portal/auth?id=32\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_033",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-2@enron-intranet-update.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@harvest-hub.xyz",
+    "subject": "Immediate Attention Required: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1033]",
+    "body": "Ref: #9933\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://192.168.10.12/portal/auth?id=33\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_034",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-3@enron-intranet-update.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@harvest-hub.xyz",
+    "subject": "Critical Warning: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1034]",
+    "body": "Ref: #9934\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://10.0.5.13/portal/auth?id=34\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_035",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-4@enron-intranet-update.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@harvest-hub.xyz",
+    "subject": "Account Suspended: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1035]",
+    "body": "Ref: #9935\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://198.51.100.14/portal/auth?id=35\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_036",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-5@enron-intranet-update.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@harvest-hub.xyz",
+    "subject": "Security Notification: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1036]",
+    "body": "Ref: #9936\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://203.0.113.15/portal/auth?id=36\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_037",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-6@enron-intranet-update.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@harvest-hub.xyz",
+    "subject": "Immediate Attention Required: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1037]",
+    "body": "Ref: #9937\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://192.168.10.16/portal/auth?id=37\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_038",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-7@enron-intranet-update.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@harvest-hub.xyz",
+    "subject": "Critical Warning: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1038]",
+    "body": "Ref: #9938\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://10.0.5.17/portal/auth?id=38\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_039",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-8@enron-intranet-update.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@harvest-hub.xyz",
+    "subject": "Account Suspended: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1039]",
+    "body": "Ref: #9939\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://198.51.100.18/portal/auth?id=39\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_040",
+    "source": "APWG Public Lures",
+    "threat_category": "System Notice",
+    "sender": "alert-9@enron-intranet-update.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@harvest-hub.xyz",
+    "subject": "Security Notification: System Notice: Mandatory SSL VPN Certificate Upgrade [Ref #1040]",
+    "body": "Ref: #9940\nAttention Enron Staff,\nIT is upgrading all remote VPN certificates tonight. To prevent disconnection from company resources, you must authenticate your active directory credentials now:\nhttp://192.168.99.12/vpn/login\nEnter your domain username and network password.\nDirect Server Link: http://203.0.113.19/portal/auth?id=40\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_041",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-0@paypaI-notification.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@secure-paypaI.buzz",
+    "subject": "Account Suspended: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1041]",
+    "body": "Ref: #9941\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://198.51.100.10/portal/auth?id=41\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_042",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-1@paypaI-notification.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@secure-paypaI.buzz",
+    "subject": "Security Notification: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1042]",
+    "body": "Ref: #9942\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://203.0.113.11/portal/auth?id=42\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_043",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-2@paypaI-notification.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@secure-paypaI.buzz",
+    "subject": "Immediate Attention Required: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1043]",
+    "body": "Ref: #9943\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://192.168.10.12/portal/auth?id=43\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_044",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-3@paypaI-notification.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@secure-paypaI.buzz",
+    "subject": "Critical Warning: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1044]",
+    "body": "Ref: #9944\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://10.0.5.13/portal/auth?id=44\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_045",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-4@paypaI-notification.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@secure-paypaI.buzz",
+    "subject": "Account Suspended: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1045]",
+    "body": "Ref: #9945\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://198.51.100.14/portal/auth?id=45\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_046",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-5@paypaI-notification.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@secure-paypaI.buzz",
+    "subject": "Security Notification: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1046]",
+    "body": "Ref: #9946\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://203.0.113.15/portal/auth?id=46\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_047",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-6@paypaI-notification.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@secure-paypaI.buzz",
+    "subject": "Immediate Attention Required: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1047]",
+    "body": "Ref: #9947\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://192.168.10.16/portal/auth?id=47\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_048",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-7@paypaI-notification.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@secure-paypaI.buzz",
+    "subject": "Critical Warning: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1048]",
+    "body": "Ref: #9948\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://10.0.5.17/portal/auth?id=48\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_049",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-8@paypaI-notification.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@secure-paypaI.buzz",
+    "subject": "Account Suspended: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1049]",
+    "body": "Ref: #9949\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://198.51.100.18/portal/auth?id=49\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_050",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "Credential Phishing",
+    "sender": "alert-9@paypaI-notification.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@secure-paypaI.buzz",
+    "subject": "Security Notification: Receipt for your payment of $1,299.99 to Apple Store Inc [Ref #1050]",
+    "body": "Ref: #9950\nYou sent a payment of $1,299.99 to Apple Store Inc. If you did not make this transaction, cancel it immediately to receive a full refund.\nCancel Transaction: http://bit.ly/cancel-paypal-tx-2981\nPayPal Fraud Prevention Team\nDirect Server Link: http://203.0.113.19/portal/auth?id=50\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_051",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-0@dhl-express-customs.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@dhl-express-customs.club",
+    "subject": "Account Suspended: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1051]",
+    "body": "Ref: #9951\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://198.51.100.10/portal/auth?id=51\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_052",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-1@dhl-express-customs.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@dhl-express-customs.club",
+    "subject": "Security Notification: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1052]",
+    "body": "Ref: #9952\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://203.0.113.11/portal/auth?id=52\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_053",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-2@dhl-express-customs.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@dhl-express-customs.club",
+    "subject": "Immediate Attention Required: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1053]",
+    "body": "Ref: #9953\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://192.168.10.12/portal/auth?id=53\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_054",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-3@dhl-express-customs.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@dhl-express-customs.club",
+    "subject": "Critical Warning: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1054]",
+    "body": "Ref: #9954\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://10.0.5.13/portal/auth?id=54\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_055",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-4@dhl-express-customs.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@dhl-express-customs.club",
+    "subject": "Account Suspended: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1055]",
+    "body": "Ref: #9955\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://198.51.100.14/portal/auth?id=55\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_056",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-5@dhl-express-customs.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@dhl-express-customs.club",
+    "subject": "Security Notification: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1056]",
+    "body": "Ref: #9956\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://203.0.113.15/portal/auth?id=56\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_057",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-6@dhl-express-customs.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@dhl-express-customs.club",
+    "subject": "Immediate Attention Required: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1057]",
+    "body": "Ref: #9957\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://192.168.10.16/portal/auth?id=57\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_058",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-7@dhl-express-customs.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@dhl-express-customs.club",
+    "subject": "Critical Warning: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1058]",
+    "body": "Ref: #9958\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://10.0.5.17/portal/auth?id=58\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_059",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-8@dhl-express-customs.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@dhl-express-customs.club",
+    "subject": "Account Suspended: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1059]",
+    "body": "Ref: #9959\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://198.51.100.18/portal/auth?id=59\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_060",
+    "source": "Nazario Phishing Corpus",
+    "threat_category": "DHL Express",
+    "sender": "alert-9@dhl-express-customs.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@dhl-express-customs.club",
+    "subject": "Security Notification: DHL Express: Package on Hold - Outstanding Duty Payment Required [Ref #1060]",
+    "body": "Ref: #9960\nYour parcel #DHL-8829104 is being held at the regional customs depot. Pay the $4.50 clearance fee within 24 hours to schedule redelivery:\nPay Clearance Fee: http://198.51.100.99/dhl/pay.php\nPackages with unpaid fees will be destroyed after 48 hours.\nDirect Server Link: http://203.0.113.19/portal/auth?id=60\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_061",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-0@enron-payroll-portal.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@payroll-host.top",
+    "subject": "Account Suspended: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1061]",
+    "body": "Ref: #9961\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://198.51.100.10/portal/auth?id=61\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_062",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-1@enron-payroll-portal.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@payroll-host.top",
+    "subject": "Security Notification: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1062]",
+    "body": "Ref: #9962\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://203.0.113.11/portal/auth?id=62\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_063",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-2@enron-payroll-portal.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@payroll-host.top",
+    "subject": "Immediate Attention Required: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1063]",
+    "body": "Ref: #9963\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://192.168.10.12/portal/auth?id=63\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_064",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-3@enron-payroll-portal.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@payroll-host.top",
+    "subject": "Critical Warning: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1064]",
+    "body": "Ref: #9964\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://10.0.5.13/portal/auth?id=64\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_065",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-4@enron-payroll-portal.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@payroll-host.top",
+    "subject": "Account Suspended: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1065]",
+    "body": "Ref: #9965\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://198.51.100.14/portal/auth?id=65\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_066",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-5@enron-payroll-portal.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@payroll-host.top",
+    "subject": "Security Notification: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1066]",
+    "body": "Ref: #9966\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://203.0.113.15/portal/auth?id=66\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_067",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-6@enron-payroll-portal.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@payroll-host.top",
+    "subject": "Immediate Attention Required: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1067]",
+    "body": "Ref: #9967\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://192.168.10.16/portal/auth?id=67\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_068",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-7@enron-payroll-portal.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@payroll-host.top",
+    "subject": "Critical Warning: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1068]",
+    "body": "Ref: #9968\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://10.0.5.17/portal/auth?id=68\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_069",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-8@enron-payroll-portal.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@payroll-host.top",
+    "subject": "Account Suspended: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1069]",
+    "body": "Ref: #9969\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://198.51.100.18/portal/auth?id=69\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_070",
+    "source": "APWG Workplace Phishing",
+    "threat_category": "URGENT",
+    "sender": "alert-9@enron-payroll-portal.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@payroll-host.top",
+    "subject": "Security Notification: URGENT: Annual Bonus & Health Insurance Enrollment Ends Today [Ref #1070]",
+    "body": "Ref: #9970\nDear Employee,\nFailure to re-enroll will result in forfeiture of your year-end bonus and medical benefits. Review your compensation statement and confirm your direct deposit details immediately:\nhttp://203.0.113.150/portal/benefits_login.aspx\nDirect Server Link: http://203.0.113.19/portal/auth?id=70\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_071",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-0@citigroup.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@evil-server.org",
+    "subject": "Account Suspended: Important Notice: Update billing information for credit account [Ref #1071]",
+    "body": "Ref: #9971\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://198.51.100.10/portal/auth?id=71\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_072",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-1@citigroup.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@evil-server.org",
+    "subject": "Security Notification: Important Notice: Update billing information for credit account [Ref #1072]",
+    "body": "Ref: #9972\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://203.0.113.11/portal/auth?id=72\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_073",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-2@citigroup.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@evil-server.org",
+    "subject": "Immediate Attention Required: Important Notice: Update billing information for credit account [Ref #1073]",
+    "body": "Ref: #9973\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://192.168.10.12/portal/auth?id=73\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_074",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-3@citigroup.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@evil-server.org",
+    "subject": "Critical Warning: Important Notice: Update billing information for credit account [Ref #1074]",
+    "body": "Ref: #9974\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://10.0.5.13/portal/auth?id=74\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_075",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-4@citigroup.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@evil-server.org",
+    "subject": "Account Suspended: Important Notice: Update billing information for credit account [Ref #1075]",
+    "body": "Ref: #9975\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://198.51.100.14/portal/auth?id=75\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_076",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-5@citigroup.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@evil-server.org",
+    "subject": "Security Notification: Important Notice: Update billing information for credit account [Ref #1076]",
+    "body": "Ref: #9976\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://203.0.113.15/portal/auth?id=76\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_077",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-6@citigroup.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@evil-server.org",
+    "subject": "Immediate Attention Required: Important Notice: Update billing information for credit account [Ref #1077]",
+    "body": "Ref: #9977\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://192.168.10.16/portal/auth?id=77\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_078",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-7@citigroup.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@evil-server.org",
+    "subject": "Critical Warning: Important Notice: Update billing information for credit account [Ref #1078]",
+    "body": "Ref: #9978\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://10.0.5.17/portal/auth?id=78\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_079",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-8@citigroup.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@evil-server.org",
+    "subject": "Account Suspended: Important Notice: Update billing information for credit account [Ref #1079]",
+    "body": "Ref: #9979\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://198.51.100.18/portal/auth?id=79\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_080",
+    "source": "Nazario Corpus",
+    "threat_category": "Important Notice",
+    "sender": "alert-9@citigroup.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@evil-server.org",
+    "subject": "Security Notification: Important Notice: Update billing information for credit account [Ref #1080]",
+    "body": "Ref: #9980\nDear Citibank customer, We were unable to process your recent account statement. Please log in immediately at http://192.0.2.144/citibank/update.html to verify your credit card number, expiration date, and CVV.\nDirect Server Link: http://203.0.113.19/portal/auth?id=80\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_081",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-0@international-lottery.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@africamail.com",
+    "subject": "Account Suspended: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1081]",
+    "body": "Ref: #9981\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://198.51.100.10/portal/auth?id=81\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_082",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-1@international-lottery.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@africamail.com",
+    "subject": "Security Notification: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1082]",
+    "body": "Ref: #9982\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://203.0.113.11/portal/auth?id=82\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_083",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-2@international-lottery.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@africamail.com",
+    "subject": "Immediate Attention Required: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1083]",
+    "body": "Ref: #9983\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://192.168.10.12/portal/auth?id=83\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_084",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-3@international-lottery.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@africamail.com",
+    "subject": "Critical Warning: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1084]",
+    "body": "Ref: #9984\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://10.0.5.13/portal/auth?id=84\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_085",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-4@international-lottery.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@africamail.com",
+    "subject": "Account Suspended: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1085]",
+    "body": "Ref: #9985\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://198.51.100.14/portal/auth?id=85\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_086",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-5@international-lottery.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@africamail.com",
+    "subject": "Security Notification: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1086]",
+    "body": "Ref: #9986\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://203.0.113.15/portal/auth?id=86\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_087",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-6@international-lottery.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@africamail.com",
+    "subject": "Immediate Attention Required: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1087]",
+    "body": "Ref: #9987\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://192.168.10.16/portal/auth?id=87\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_088",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-7@international-lottery.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@africamail.com",
+    "subject": "Critical Warning: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1088]",
+    "body": "Ref: #9988\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://10.0.5.17/portal/auth?id=88\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_089",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-8@international-lottery.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@africamail.com",
+    "subject": "Account Suspended: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1089]",
+    "body": "Ref: #9989\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://198.51.100.18/portal/auth?id=89\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_090",
+    "source": "Historical 419 / Lottery Corpus",
+    "threat_category": "CONGRATULATIONS",
+    "sender": "alert-9@international-lottery.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@africamail.com",
+    "subject": "Security Notification: CONGRATULATIONS: You have won $2,500,000 USD in European Sweepstakes [Ref #1090]",
+    "body": "Ref: #9990\nAttn: Sir/Madam, Your email address was selected in the Euro Millennium Draw. To claim your sum of $2,500,000 USD, send your full name, bank account, and phone number immediately to our claims director.\nClaim here: http://bit.ly/euro-millions-claim\nDirect Server Link: http://203.0.113.19/portal/auth?id=90\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_091",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-0@enron-mail-admin.xyz",
+    "recipients": [
+      "pallen@enron.com"
+    ],
+    "reply_to": "harvest-0@mail-collector.top",
+    "subject": "Account Suspended: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1091]",
+    "body": "Ref: #9991\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://198.51.100.10/portal/auth?id=91\nUrgent response required.",
+    "date": "Sun, 01 Nov 2001 00:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_092",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-1@enron-mail-admin.top",
+    "recipients": [
+      "skilling@enron.com"
+    ],
+    "reply_to": "harvest-1@mail-collector.top",
+    "subject": "Security Notification: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1092]",
+    "body": "Ref: #9992\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://203.0.113.11/portal/auth?id=92\nUrgent response required.",
+    "date": "Sun, 02 Nov 2001 01:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_093",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-2@enron-mail-admin.buzz",
+    "recipients": [
+      "lay@enron.com"
+    ],
+    "reply_to": "harvest-2@mail-collector.top",
+    "subject": "Immediate Attention Required: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1093]",
+    "body": "Ref: #9993\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://192.168.10.12/portal/auth?id=93\nUrgent response required.",
+    "date": "Sun, 03 Nov 2001 02:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_094",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-3@enron-mail-admin.club",
+    "recipients": [
+      "kaminski@enron.com"
+    ],
+    "reply_to": "harvest-3@mail-collector.top",
+    "subject": "Critical Warning: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1094]",
+    "body": "Ref: #9994\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://10.0.5.13/portal/auth?id=94\nUrgent response required.",
+    "date": "Sun, 04 Nov 2001 03:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_095",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-4@enron-mail-admin.loan",
+    "recipients": [
+      "dasovich@enron.com"
+    ],
+    "reply_to": "harvest-4@mail-collector.top",
+    "subject": "Account Suspended: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1095]",
+    "body": "Ref: #9995\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://198.51.100.14/portal/auth?id=95\nUrgent response required.",
+    "date": "Sun, 05 Nov 2001 04:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_096",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-5@enron-mail-admin.tk",
+    "recipients": [
+      "arnold@enron.com"
+    ],
+    "reply_to": "harvest-5@mail-collector.top",
+    "subject": "Security Notification: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1096]",
+    "body": "Ref: #9996\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://203.0.113.15/portal/auth?id=96\nUrgent response required.",
+    "date": "Sun, 06 Nov 2001 05:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_097",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-6@enron-mail-admin.xyz",
+    "recipients": [
+      "whitt@enron.com"
+    ],
+    "reply_to": "harvest-6@mail-collector.top",
+    "subject": "Immediate Attention Required: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1097]",
+    "body": "Ref: #9997\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://192.168.10.16/portal/auth?id=97\nUrgent response required.",
+    "date": "Sun, 07 Nov 2001 06:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_098",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-7@enron-mail-admin.top",
+    "recipients": [
+      "walsh@enron.com"
+    ],
+    "reply_to": "harvest-7@mail-collector.top",
+    "subject": "Critical Warning: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1098]",
+    "body": "Ref: #9998\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://10.0.5.17/portal/auth?id=98\nUrgent response required.",
+    "date": "Sun, 08 Nov 2001 07:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_099",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-8@enron-mail-admin.buzz",
+    "recipients": [
+      "farmer@enron.com"
+    ],
+    "reply_to": "harvest-8@mail-collector.top",
+    "subject": "Account Suspended: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1099]",
+    "body": "Ref: #9999\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://198.51.100.18/portal/auth?id=99\nUrgent response required.",
+    "date": "Sun, 09 Nov 2001 08:15:00 -0600",
+    "ground_truth_label": 1
+  },
+  {
+    "id": "phish_100",
+    "source": "APWG / Webmail Harvesting",
+    "threat_category": "Warning",
+    "sender": "alert-9@enron-mail-admin.club",
+    "recipients": [
+      "beck@enron.com"
+    ],
+    "reply_to": "harvest-9@mail-collector.top",
+    "subject": "Security Notification: Warning: Mailbox Storage Limit Exceeded (98% Full) [Ref #1100]",
+    "body": "Ref: #10000\nYour email storage has exceeded its quota limit. You will not be able to send or receive new emails. To increase mailbox size for free, validate your account:\nhttp://198.51.100.77/webmail/validate\nEnter username and password to prevent account termination.\nDirect Server Link: http://203.0.113.19/portal/auth?id=100\nUrgent response required.",
+    "date": "Sun, 10 Nov 2001 09:15:00 -0600",
+    "ground_truth_label": 1
+  }
+]
