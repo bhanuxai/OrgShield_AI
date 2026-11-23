@@ -71,22 +71,28 @@ export default function Settings() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64 text-slate-400 font-mono text-sm">
-        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-cyan-400 mr-3"></div>
-        Loading system configuration...
+      <div className="flex flex-col items-center justify-center h-64 font-mono">
+        <div className="p-4 bg-[#FFE600] border-2 border-black shadow-[4px_4px_0px_0px_#000] font-black uppercase tracking-wider flex items-center gap-3">
+          <div className="h-4 w-4 border-2 border-black border-t-transparent animate-spin rounded-full" />
+          <span>LOADING SYSTEM CONFIGURATION...</span>
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="cyber-card p-8 text-center space-y-4 my-8 max-w-lg mx-auto">
-        <div className="text-rose-400 font-mono text-xs font-semibold">{error}</div>
+      <div className="border-2 border-black bg-white p-6 text-center space-y-4 my-8 max-w-lg mx-auto shadow-[4px_4px_0px_0px_#000]">
+        <div className="inline-flex p-3 bg-[#FF3366] text-white border-2 border-black shadow-[3px_3px_0px_0px_#000]">
+          <AlertCircle className="h-6 w-6 stroke-[2.5]" />
+        </div>
+        <h3 className="text-base font-black uppercase text-black">Settings Pipeline Offline</h3>
+        <p className="text-xs font-mono text-slate-700">{error}</p>
         <button
           onClick={fetchSettings}
-          className="px-4 py-2 text-xs font-mono rounded bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 transition-colors"
+          className="brutal-btn px-4 py-2 text-xs font-mono bg-[#FFE600] text-black"
         >
-          Retry Connection
+          RETRY CONNECTION
         </button>
       </div>
     );
@@ -95,50 +101,57 @@ export default function Settings() {
   return (
     <div className="space-y-6">
       {/* Top Banner */}
-      <div className="cyber-card p-4 flex items-center justify-between">
+      <div className="border-2 border-black bg-[#FFFDF0] p-4 shadow-[4px_4px_0px_0px_#000000] flex items-center justify-between">
         <div>
-          <h2 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-            <SettingsIcon className="h-4 w-4 text-cyan-400" />
+          <h2 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2">
+            <span className="p-1 bg-[#FFE600] border border-black shadow-[1px_1px_0px_#000]">
+              <SettingsIcon className="h-4 w-4 stroke-[2.5]" />
+            </span>
             <span>Platform Configuration & Dataset Telemetry</span>
           </h2>
-          <p className="text-[11px] text-slate-400 font-mono mt-0.5">
+          <p className="text-[11px] text-slate-700 font-mono mt-0.5">
             Calibrate operational detection sensitivity and inspect baseline Enron corpus inventory
           </p>
         </div>
+        <span className="text-xs font-mono font-bold bg-[#FFE600] px-2.5 py-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+          SYSTEM CONFIG
+        </span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* ML Configuration Form */}
-        <div className="cyber-card p-5 space-y-4">
-          <h3 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2 border-b border-slate-800/80 pb-3">
-            <Cpu className="h-4 w-4 text-cyan-400" />
+        <div className="border-2 border-black bg-white p-5 space-y-4 shadow-[4px_4px_0px_0px_#000]">
+          <h3 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2 border-b-2 border-black pb-3">
+            <span className="p-1 bg-[#00F0FF] border border-black">
+              <Cpu className="h-3.5 w-3.5 stroke-[2.5]" />
+            </span>
             <span>Anomaly Model & Sensitivity Calibration</span>
           </h3>
 
           <form onSubmit={handleSaveSettings} className="space-y-4 text-xs font-mono">
             {/* Active Model Selector */}
             <div className="space-y-1.5">
-              <label className="text-slate-400 font-medium">Active Threat Engine</label>
+              <label className="text-black font-black uppercase text-[11px]">Active Threat Engine</label>
               <select
                 value={activeModel}
                 onChange={(e) => setActiveModel(e.target.value)}
-                className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 focus:outline-none focus:border-cyan-500"
+                className="w-full px-3 py-2 border-2 border-black bg-[#F4F0EA] text-black font-mono font-bold shadow-[2px_2px_0px_#000] focus:outline-none focus:bg-[#FFFDF0]"
               >
                 <option value="isolation_forest">Isolation Forest (Primary Unsupervised ML)</option>
                 <option value="one_class_svm">One-Class SVM (RBF Kernel Support Frontier)</option>
                 <option value="local_outlier_factor">Local Outlier Factor (k-NN Density Novelty)</option>
                 <option value="rule_based_baseline">Rule-Based Baseline (Deterministic Blocklists)</option>
               </select>
-              <p className="text-[10px] text-slate-500">
+              <p className="text-[10px] text-slate-600 font-medium">
                 Selected model will score all incoming API scan requests.
               </p>
             </div>
 
             {/* Threshold Slider & Input */}
-            <div className="space-y-2 pt-2">
+            <div className="space-y-2 pt-2 border-t-2 border-black">
               <div className="flex justify-between items-center">
-                <label className="text-slate-400 font-medium">Anomaly Decision Threshold (&tau;)</label>
-                <span className="text-cyan-400 font-bold px-2 py-0.5 rounded bg-slate-900 border border-slate-800">
+                <label className="text-black font-black uppercase text-[11px]">Anomaly Decision Threshold (&tau;)</label>
+                <span className="text-black font-black px-2.5 py-0.5 bg-[#FFE600] border-2 border-black shadow-[2px_2px_0px_#000]">
                   {Number(threshold).toFixed(4)}
                 </span>
               </div>
@@ -149,17 +162,17 @@ export default function Settings() {
                 step="0.005"
                 value={threshold}
                 onChange={(e) => setThreshold(parseFloat(e.target.value))}
-                className="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-cyan-400"
+                className="w-full h-3 bg-white border-2 border-black appearance-none cursor-pointer accent-black"
               />
-              <div className="flex justify-between text-[10px] text-slate-500">
+              <div className="flex justify-between text-[10px] text-slate-700 font-bold">
                 <span>0.10 (Aggressive / High Sensitivity)</span>
                 <span>0.95 (Conservative / Low FP)</span>
               </div>
             </div>
 
             {saveSuccess && (
-              <div className="p-2.5 rounded bg-emerald-950/60 border border-emerald-800 text-emerald-400 flex items-center gap-2 text-[11px]">
-                <CheckCircle2 className="h-4 w-4" />
+              <div className="p-3 border-2 border-black bg-[#DCFCE7] text-black flex items-center gap-2 text-[11px] font-bold shadow-[2px_2px_0px_#000]">
+                <CheckCircle2 className="h-4 w-4 stroke-[2.5]" />
                 <span>Configuration updated successfully in database and active runtime engine.</span>
               </div>
             )}
@@ -168,49 +181,51 @@ export default function Settings() {
               <button
                 type="submit"
                 disabled={saving}
-                className="px-4 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium flex items-center gap-2 shadow-lg shadow-cyan-600/20 disabled:opacity-50 transition-colors"
+                className="brutal-btn px-5 py-2.5 bg-[#FFE600] hover:bg-[#FFD600] text-black font-black flex items-center gap-2 shadow-[3px_3px_0px_0px_#000] disabled:opacity-50 uppercase tracking-wider text-xs"
               >
-                <Save className="h-4 w-4" />
-                <span>{saving ? 'Applying...' : 'Save Configuration'}</span>
+                <Save className="h-4 w-4 stroke-[2.5]" />
+                <span>{saving ? 'APPLYING...' : 'SAVE CONFIGURATION'}</span>
               </button>
             </div>
           </form>
         </div>
 
         {/* Dataset Inventory Card */}
-        <div className="cyber-card p-5 space-y-4">
-          <h3 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2 border-b border-slate-800/80 pb-3">
-            <Database className="h-4 w-4 text-cyan-400" />
+        <div className="border-2 border-black bg-white p-5 space-y-4 shadow-[4px_4px_0px_0px_#000]">
+          <h3 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2 border-b-2 border-black pb-3">
+            <span className="p-1 bg-[#FFE600] border border-black">
+              <Database className="h-3.5 w-3.5 stroke-[2.5]" />
+            </span>
             <span>Enron Email Corpus Inventory</span>
           </h3>
 
-          <div className="space-y-2.5 text-xs font-mono">
-            <div className="flex justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
-              <span className="text-slate-400">Maildir Root Path:</span>
-              <span className="text-cyan-400 truncate max-w-[200px]" title={datasetStats?.dataset_root}>
+          <div className="space-y-2 text-xs font-mono">
+            <div className="flex justify-between p-2.5 border-2 border-black bg-[#F4F0EA]">
+              <span className="text-slate-700 font-bold">Maildir Root Path:</span>
+              <span className="text-black font-black truncate max-w-[200px] bg-white px-1 border border-black" title={datasetStats?.dataset_root}>
                 {datasetStats?.dataset_root || 'enron_mail_20150507_final/maildir'}
               </span>
             </div>
-            <div className="flex justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
-              <span className="text-slate-400">Total Users in Dataset:</span>
-              <span className="text-slate-200">{datasetStats?.total_users_in_dataset || 150}</span>
+            <div className="flex justify-between p-2.5 border-2 border-black bg-[#F4F0EA]">
+              <span className="text-slate-700 font-bold">Total Users in Dataset:</span>
+              <span className="text-black font-black">{datasetStats?.total_users_in_dataset || 150}</span>
             </div>
-            <div className="flex justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
-              <span className="text-slate-400">Sampled Training Inventory:</span>
-              <span className="text-slate-200">{datasetStats?.readable_emails_count || 6000}</span>
+            <div className="flex justify-between p-2.5 border-2 border-black bg-[#F4F0EA]">
+              <span className="text-slate-700 font-bold">Sampled Training Inventory:</span>
+              <span className="text-black font-black">{datasetStats?.readable_emails_count || 6000}</span>
             </div>
-            <div className="flex justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
-              <span className="text-slate-400">Unique Senders Tracked:</span>
-              <span className="text-slate-200">{datasetStats?.unique_senders_count || 1609}</span>
+            <div className="flex justify-between p-2.5 border-2 border-black bg-[#F4F0EA]">
+              <span className="text-slate-700 font-bold">Unique Senders Tracked:</span>
+              <span className="text-black font-black">{datasetStats?.unique_senders_count || 1609}</span>
             </div>
-            <div className="flex justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
-              <span className="text-slate-400">Unique Recipients:</span>
-              <span className="text-slate-200">{datasetStats?.unique_recipients_count || 8325}</span>
+            <div className="flex justify-between p-2.5 border-2 border-black bg-[#F4F0EA]">
+              <span className="text-slate-700 font-bold">Unique Recipients:</span>
+              <span className="text-black font-black">{datasetStats?.unique_recipients_count || 8325}</span>
             </div>
-            <div className="flex justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
-              <span className="text-slate-400">Corpus Contamination Detected:</span>
-              <span className="text-amber-400">
-                {datasetStats?.corpus_contamination_notes?.detected_count || 30} historical marketing/lottery emails
+            <div className="flex justify-between p-2.5 border-2 border-black bg-[#F4F0EA]">
+              <span className="text-slate-700 font-bold">Corpus Contamination Detected:</span>
+              <span className="text-black font-black bg-[#FFE600] px-1 border border-black">
+                {datasetStats?.corpus_contamination_notes?.detected_count || 30} marketing/lottery emails
               </span>
             </div>
           </div>

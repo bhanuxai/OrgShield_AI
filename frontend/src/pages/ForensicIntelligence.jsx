@@ -43,22 +43,28 @@ export default function ForensicIntelligence() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64 text-slate-400 font-mono text-sm">
-        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-cyan-400 mr-3"></div>
-        Loading forensic records...
+      <div className="flex flex-col items-center justify-center h-64 font-mono">
+        <div className="p-4 bg-[#FFE600] border-2 border-black shadow-[4px_4px_0px_0px_#000] font-black uppercase tracking-wider flex items-center gap-3">
+          <div className="h-4 w-4 border-2 border-black border-t-transparent animate-spin rounded-full" />
+          <span>LOADING FORENSIC DOSSIERS...</span>
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="cyber-card p-8 text-center space-y-4 my-8 max-w-lg mx-auto">
-        <div className="text-rose-400 font-mono text-xs font-semibold">{error}</div>
+      <div className="border-2 border-black bg-white p-6 text-center space-y-4 my-8 max-w-lg mx-auto shadow-[4px_4px_0px_0px_#000]">
+        <div className="inline-flex p-3 bg-[#FF3366] text-white border-2 border-black shadow-[3px_3px_0px_0px_#000]">
+          <AlertTriangle className="h-6 w-6 stroke-[2.5]" />
+        </div>
+        <h3 className="text-base font-black uppercase text-black">Forensics Pipeline Offline</h3>
+        <p className="text-xs font-mono text-slate-700">{error}</p>
         <button
           onClick={fetchAlerts}
-          className="px-4 py-2 text-xs font-mono rounded bg-cyan-950 border border-cyan-800 text-cyan-400 hover:bg-cyan-900 transition-colors"
+          className="brutal-btn px-4 py-2 text-xs font-mono bg-[#FFE600] text-black"
         >
-          Retry Connection
+          RETRY CONNECTION
         </button>
       </div>
     );
@@ -73,26 +79,37 @@ export default function ForensicIntelligence() {
   return (
     <div className="space-y-6">
       {/* Top Banner Notice */}
-      <div className="cyber-card p-4 flex items-center justify-between">
+      <div className="border-2 border-black bg-[#FFFDF0] p-4 shadow-[4px_4px_0px_0px_#000000] flex items-center justify-between">
         <div>
-          <h2 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-            <Fingerprint className="h-4 w-4 text-cyan-400" />
+          <h2 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2">
+            <span className="p-1 bg-[#FFE600] border border-black shadow-[1px_1px_0px_#000]">
+              <Fingerprint className="h-4 w-4 stroke-[2.5]" />
+            </span>
             <span>Forensic Intelligence & Network Routing Analysis</span>
           </h2>
-          <p className="text-[11px] text-slate-400 font-mono mt-0.5">
-            Strict verification boundaries: private IPs marked unavailable; zero invented geolocation coordinates
+          <p className="text-[11px] text-slate-700 font-mono mt-0.5">
+            Strict verification boundaries: private IPs marked non-routable; zero invented geolocation coordinates
           </p>
         </div>
+        <span className="text-xs font-mono font-bold bg-[#FFE600] px-2.5 py-1 border-2 border-black shadow-[2px_2px_0px_#000]">
+          RFC 822 / 2822 INSPECT
+        </span>
       </div>
 
       {/* Main Forensic Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Column: Alert Selector */}
-        <div className="cyber-card p-4 lg:col-span-1 space-y-3">
-          <h3 className="text-xs font-semibold text-white tracking-wider uppercase mb-2">Select Scanned Message</h3>
+        <div className="border-2 border-black bg-white p-4 lg:col-span-1 space-y-3 shadow-[4px_4px_0px_0px_#000]">
+          <div className="flex items-center justify-between border-b-2 border-black pb-2">
+            <h3 className="text-xs font-black uppercase text-black tracking-wider">Select Scanned Message</h3>
+            <span className="text-[10px] font-mono font-bold px-1.5 py-0.5 bg-black text-[#FFE600]">
+              {alerts.length} ITEMS
+            </span>
+          </div>
+
           <div className="space-y-2 max-h-[600px] overflow-y-auto pr-1">
             {alerts.length === 0 && (
-              <div className="text-slate-500 text-xs font-mono p-4 text-center">
+              <div className="text-slate-600 text-xs font-mono p-4 text-center font-bold">
                 No alerts available in audit queue.
               </div>
             )}
@@ -102,22 +119,22 @@ export default function ForensicIntelligence() {
                 <button
                   key={alt.alert_id}
                   onClick={() => setSelectedAlert(alt)}
-                  className={`w-full p-3 rounded-lg text-left transition-all border ${
+                  className={`w-full p-3 text-left transition-all border-2 border-black ${
                     isSelected
-                      ? 'bg-cyan-950/70 border-cyan-500/60 shadow-[0_0_15px_rgba(14,165,233,0.15)]'
-                      : 'bg-slate-900/60 border-slate-800/80 hover:bg-slate-800/50'
+                      ? 'bg-[#FFE600] text-black shadow-[3px_3px_0px_0px_#000] translate-x-1'
+                      : 'bg-[#F4F0EA] hover:bg-[#FFFDF0] hover:shadow-[2px_2px_0px_0px_#000]'
                   }`}
                 >
                   <div className="flex items-center justify-between text-xs font-mono mb-1">
-                    <span className="font-semibold text-cyan-400">{alt.alert_id}</span>
-                    <span className={`px-1.5 py-0.5 rounded text-[10px] ${
-                      alt.is_threat ? 'bg-rose-950 text-rose-400 border border-rose-800' : 'bg-emerald-950 text-emerald-400 border border-emerald-800'
+                    <span className="font-black text-black">{alt.alert_id}</span>
+                    <span className={`px-1.5 py-0.5 text-[9px] font-black uppercase border border-black ${
+                      alt.is_threat ? 'bg-[#FF3366] text-white' : 'bg-[#00E599] text-black'
                     }`}>
                       {alt.risk_category}
                     </span>
                   </div>
-                  <div className="text-xs font-medium text-slate-200 truncate">{alt.subject || 'No Subject'}</div>
-                  <div className="text-[11px] font-mono text-slate-400 truncate mt-0.5">{alt.sender}</div>
+                  <div className="text-xs font-bold text-black truncate">{alt.subject || 'No Subject'}</div>
+                  <div className="text-[10px] font-mono font-medium text-slate-700 truncate mt-0.5">{alt.sender}</div>
                 </button>
               );
             })}
@@ -129,42 +146,44 @@ export default function ForensicIntelligence() {
           {selectedAlert ? (
             <>
               {/* Geolocation & Routing Intelligence Card */}
-              <div className="cyber-card p-5 space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
-                  <h3 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-                    <Globe className="h-4 w-4 text-cyan-400" />
+              <div className="border-2 border-black bg-white p-5 space-y-4 shadow-[4px_4px_0px_0px_#000]">
+                <div className="flex items-center justify-between border-b-2 border-black pb-3">
+                  <h3 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2">
+                    <span className="p-1 bg-[#00F0FF] border border-black">
+                      <Globe className="h-3.5 w-3.5 stroke-[2.5]" />
+                    </span>
                     <span>IP Telemetry & Geolocation Verdict</span>
                   </h3>
-                  <span className="text-xs font-mono text-slate-400">
-                    Routing Hops: <strong className="text-cyan-400">{routing.hop_count || 0}</strong>
+                  <span className="text-xs font-mono font-bold text-black bg-[#F4F0EA] px-2 py-0.5 border border-black">
+                    ROUTING HOPS: <strong className="text-black">{routing.hop_count || 0}</strong>
                   </span>
                 </div>
 
                 {/* Geolocation Status Banner */}
-                <div className={`p-4 rounded-xl border font-mono text-xs ${
+                <div className={`p-4 border-2 border-black font-mono text-xs shadow-[3px_3px_0px_0px_#000] ${
                   geo.available
-                    ? 'bg-cyan-950/40 border-cyan-800/60 text-cyan-300'
-                    : 'bg-slate-900/80 border-slate-800 text-slate-400'
+                    ? 'bg-[#DCFCE7] text-black'
+                    : 'bg-[#FFFDF0] text-black'
                 }`}>
-                  <div className="flex items-center gap-2 font-semibold mb-1">
-                    <Info className="h-4 w-4 text-cyan-400" />
+                  <div className="flex items-center gap-2 font-black mb-1 text-sm uppercase">
+                    <Info className="h-4 w-4 stroke-[2.5]" />
                     <span>Geolocation Status: {geo.available ? 'Public IP Identified (Approximate)' : 'Strictly Unavailable'}</span>
                   </div>
 
                   {geo.available ? (
-                    <div className="space-y-1 mt-2 text-[11px] text-slate-300">
-                      <div>Primary Routable IP: <strong className="text-cyan-400">{geo.primary_public_ip}</strong></div>
-                      <div>Inferred Location: <strong>{geo.city}, {geo.country}</strong></div>
-                      <div>Autonomous System: <strong>{geo.asn}</strong></div>
-                      <p className="text-[10px] text-slate-400 italic mt-2 border-t border-cyan-800/40 pt-2">
+                    <div className="space-y-1 mt-2 text-[11px] font-bold">
+                      <div>Primary Routable IP: <span className="bg-white px-1.5 border border-black">{geo.primary_public_ip}</span></div>
+                      <div>Inferred Location: <span className="bg-[#FFE600] px-1.5 border border-black">{geo.city}, {geo.country}</span></div>
+                      <div>Autonomous System: <span className="bg-white px-1.5 border border-black">{geo.asn}</span></div>
+                      <p className="text-[10px] text-slate-700 italic mt-2 border-t border-black/30 pt-2 font-normal">
                         {geo.disclaimer}
                       </p>
                     </div>
                   ) : (
-                    <div className="text-[11px] space-y-1 mt-1 text-slate-400">
-                      <p>{geo.reason || 'No public IPv4 headers detected.'}</p>
-                      <p className="text-[10px] text-slate-500 italic">
-                        {geo.disclaimer || 'Internal RFC 1918 private IPs are non-routable.'}
+                    <div className="text-[11px] space-y-1 mt-1 text-slate-800 font-bold">
+                      <p>{geo.reason || 'No public IPv4 headers detected in communication hops.'}</p>
+                      <p className="text-[10px] text-slate-600 italic font-normal">
+                        {geo.disclaimer || 'Internal RFC 1918 private IPs are non-routable on the public internet.'}
                       </p>
                     </div>
                   )}
@@ -172,28 +191,30 @@ export default function ForensicIntelligence() {
 
                 {/* IP Addresses Inspected in Routing Hops */}
                 <div>
-                  <h4 className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2">
+                  <h4 className="text-[11px] font-mono font-black text-black uppercase tracking-wider mb-2">
                     Inspected IP Addresses in Received Hops
                   </h4>
                   {routing.inspected_ips?.length > 0 ? (
-                    <div className="space-y-1.5 font-mono text-xs">
+                    <div className="space-y-2 font-mono text-xs">
                       {routing.inspected_ips.map((ipRec, i) => (
-                        <div key={i} className="flex items-center justify-between p-2.5 rounded bg-slate-900 border border-slate-800">
+                        <div key={i} className="flex items-center justify-between p-2.5 border-2 border-black bg-[#F4F0EA] shadow-[2px_2px_0px_#000]">
                           <div className="flex items-center gap-2">
-                            <Network className="h-3.5 w-3.5 text-slate-500" />
-                            <span className="text-slate-200">{ipRec.ip}</span>
-                            <span className="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">
+                            <Network className="h-3.5 w-3.5 text-black stroke-[2.5]" />
+                            <span className="font-black text-black">{ipRec.ip}</span>
+                            <span className="text-[9px] font-bold px-1.5 py-0.5 bg-white text-black border border-black">
                               {ipRec.type}
                             </span>
                           </div>
-                          <span className={`text-[10px] ${ipRec.is_public ? 'text-cyan-400' : 'text-slate-500'}`}>
+                          <span className={`text-[10px] font-bold px-2 py-0.5 border border-black ${
+                            ipRec.is_public ? 'bg-[#00E599] text-black' : 'bg-slate-200 text-slate-700'
+                          }`}>
                             {ipRec.status_note}
                           </span>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <div className="text-xs font-mono text-slate-500 p-3 rounded bg-slate-900 border border-slate-800">
+                    <div className="text-xs font-mono text-slate-600 font-bold p-3 border-2 border-black bg-[#F4F0EA]">
                       No Received IP headers available in this message.
                     </div>
                   )}
@@ -201,60 +222,64 @@ export default function ForensicIntelligence() {
               </div>
 
               {/* Header Inconsistencies Card */}
-              <div className="cyber-card p-5 space-y-3">
-                <h3 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-                  <AlertTriangle className="h-4 w-4 text-amber-400" />
+              <div className="border-2 border-black bg-white p-5 space-y-3 shadow-[4px_4px_0px_0px_#000]">
+                <h3 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2 border-b-2 border-black pb-2">
+                  <span className="p-1 bg-[#FFE600] border border-black">
+                    <AlertTriangle className="h-3.5 w-3.5 stroke-[2.5]" />
+                  </span>
                   <span>Header Inconsistency Audit</span>
                 </h3>
 
                 {headerIssues.length > 0 ? (
                   <div className="space-y-2">
                     {headerIssues.map((issue, idx) => (
-                      <div key={idx} className="p-3 rounded-lg bg-amber-950/20 border border-amber-800/40 text-xs font-mono space-y-1">
-                        <div className="flex items-center justify-between text-amber-400 font-bold">
-                          <span>{issue.type}</span>
-                          <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-950 border border-amber-800">
-                            Severity: {issue.severity}
+                      <div key={idx} className="p-3 border-2 border-black bg-[#FFFDF0] shadow-[2px_2px_0px_#000] text-xs font-mono space-y-1">
+                        <div className="flex items-center justify-between text-black font-black">
+                          <span className="uppercase">{issue.type}</span>
+                          <span className="text-[9px] px-1.5 py-0.5 bg-[#FF8800] text-black border border-black font-black uppercase">
+                            SEVERITY: {issue.severity}
                           </span>
                         </div>
-                        <p className="text-slate-300 text-[11px]">{issue.description}</p>
+                        <p className="text-slate-800 text-[11px] font-bold">{issue.description}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <div className="flex items-center gap-2 p-3 rounded-lg bg-emerald-950/20 border border-emerald-800/40 text-xs font-mono text-emerald-400">
-                    <CheckCircle2 className="h-4 w-4 flex-shrink-0" />
-                    <span>No structural header discrepancies detected. From, Reply-To, and Message-ID align with standards.</span>
+                  <div className="flex items-center gap-2 p-3 border-2 border-black bg-[#DCFCE7] text-xs font-mono text-black font-bold shadow-[2px_2px_0px_#000]">
+                    <CheckCircle2 className="h-4 w-4 stroke-[2.5] flex-shrink-0" />
+                    <span>No structural header discrepancies detected. From, Reply-To, and Message-ID align with RFC standards.</span>
                   </div>
                 )}
               </div>
 
               {/* URL Threat Intelligence Card */}
-              <div className="cyber-card p-5 space-y-3">
-                <h3 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-                  <Server className="h-4 w-4 text-cyan-400" />
+              <div className="border-2 border-black bg-white p-5 space-y-3 shadow-[4px_4px_0px_0px_#000]">
+                <h3 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2 border-b-2 border-black pb-2">
+                  <span className="p-1 bg-[#00F0FF] border border-black">
+                    <Server className="h-3.5 w-3.5 stroke-[2.5]" />
+                  </span>
                   <span>URL Threat Intelligence ({urlIntel.length})</span>
                 </h3>
 
                 {urlIntel.length > 0 ? (
                   <div className="space-y-2">
                     {urlIntel.map((item, idx) => (
-                      <div key={idx} className="p-3 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono space-y-1.5">
-                        <div className="flex items-center justify-between">
-                          <span className="text-cyan-400 truncate max-w-[400px]">{item.url}</span>
-                          <span className={`text-[10px] px-2 py-0.5 rounded font-bold uppercase ${
-                            item.risk_level === 'CRITICAL' ? 'bg-rose-950 text-rose-400 border border-rose-800' :
-                            item.risk_level === 'MEDIUM' ? 'bg-amber-950 text-amber-400 border border-amber-800' :
-                            'bg-slate-800 text-slate-400 border border-slate-700'
+                      <div key={idx} className="p-3 border-2 border-black bg-[#F4F0EA] shadow-[2px_2px_0px_#000] text-xs font-mono space-y-1.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="text-black font-black truncate max-w-[400px] bg-white px-2 py-0.5 border border-black">{item.url}</span>
+                          <span className={`text-[10px] px-2 py-0.5 border-2 border-black font-black uppercase ${
+                            item.risk_level === 'CRITICAL' ? 'bg-[#FF3366] text-white' :
+                            item.risk_level === 'MEDIUM' ? 'bg-[#FFE600] text-black' :
+                            'bg-white text-black'
                           }`}>
-                            {item.risk_level} Risk
+                            {item.risk_level} RISK
                           </span>
                         </div>
                         {item.detected_flags?.length > 0 && (
-                          <div className="flex items-center gap-1.5 flex-wrap">
-                            <span className="text-[10px] text-slate-500">Flags:</span>
+                          <div className="flex items-center gap-1.5 flex-wrap pt-1">
+                            <span className="text-[10px] text-black font-black uppercase">FLAGS:</span>
                             {item.detected_flags.map((flag, fIdx) => (
-                              <span key={fIdx} className="text-[9px] px-1.5 py-0.5 rounded bg-rose-950/60 text-rose-300 border border-rose-800/50">
+                              <span key={fIdx} className="text-[9px] px-1.5 py-0.5 bg-[#FFE4E6] text-[#FF3366] border border-black font-bold uppercase">
                                 {flag}
                               </span>
                             ))}
@@ -264,14 +289,14 @@ export default function ForensicIntelligence() {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-xs font-mono text-slate-500 p-3 rounded bg-slate-900 border border-slate-800">
+                  <div className="text-xs font-mono text-slate-600 font-bold p-3 border-2 border-black bg-[#F4F0EA]">
                     No URLs detected in this communication.
                   </div>
                 )}
               </div>
             </>
           ) : (
-            <div className="cyber-card p-12 text-center text-slate-500 font-mono text-xs">
+            <div className="border-2 border-black bg-white p-12 text-center text-slate-700 font-mono text-xs font-bold shadow-[4px_4px_0px_0px_#000]">
               Select an email from the left to view comprehensive forensic telemetry.
             </div>
           )}

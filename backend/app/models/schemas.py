@@ -51,6 +51,10 @@ class DashboardSummary(BaseModel):
     risk_distribution: Dict[str, int]
     recent_alerts: List[Dict[str, Any]]
     evaluation_highlights: Dict[str, Any]
+    corpus_emails: Optional[int] = 6000
+    training_sample_size: Optional[int] = 4201
+    benchmark_evaluated: Optional[int] = 999
+    live_scans_count: Optional[int] = 0
 
 
 class SettingUpdatePayload(BaseModel):

@@ -9,7 +9,7 @@ from ml.inference.scanner import EmailThreatScanner
 from backend.app.database.db import init_db, save_scan_record, get_db_connection
 
 def seed_sample_records():
-    print("Seeding database with realistic scans...")
+    print("[OrgShield AI] Checking database seed status...")
     init_db()
     
     # Check if records already exist
@@ -18,8 +18,49 @@ def seed_sample_records():
         cursor.execute("SELECT COUNT(*) FROM alerts")
         count = cursor.fetchone()[0]
         if count >= 30:
-            print(f"Database already contains {count} alerts. Skipping seed.")
+            print(f"[OrgShield AI] Database already contains {count} alerts. Skipping seed.")
             return
+
+    # Check for fast-seed pre-evaluated dataset
+    seed_json_path = Path("ml/data/initial_alerts_seed.json")
+    if seed_json_path.exists():
+        try:
+            print("[OrgShield AI] Performing instant database seed from pre-evaluated benchmark...")
+            with open(seed_json_path, "r", encoding="utf-8") as f:
+                records = json.load(f)
+            
+            with get_db_connection() as conn:
+                cursor = conn.cursor()
+                for r in records:
+                    cursor.execute("""
+                        INSERT OR IGNORE INTO alerts (
+                            alert_id, timestamp, sender, sender_domain, recipients, subject,
+                            body_snippet, risk_score, risk_category, is_threat, model_used,
+                            explanation, anomaly_indicators, suspicious_urls, raw_forensics, status
+                        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (
+                        r.get("alert_id"),
+                        r.get("timestamp"),
+                        r.get("sender"),
+                        r.get("sender_domain"),
+                        r.get("recipients") if isinstance(r.get("recipients"), str) else json.dumps(r.get("recipients", [])),
+                        r.get("subject"),
+                        r.get("body_snippet"),
+                        float(r.get("risk_score", 0.0)),
+                        r.get("risk_category", "Safe"),
+                        1 if r.get("is_threat") else 0,
+                        r.get("model_used", "One Class Svm"),
+                        r.get("explanation", ""),
+                        r.get("anomaly_indicators") if isinstance(r.get("anomaly_indicators"), str) else json.dumps(r.get("anomaly_indicators", [])),
+                        r.get("suspicious_urls") if isinstance(r.get("suspicious_urls"), str) else json.dumps(r.get("suspicious_urls", [])),
+                        r.get("raw_forensics") if isinstance(r.get("raw_forensics"), str) else json.dumps(r.get("raw_forensics", {})),
+                        r.get("status", "resolved")
+                    ))
+                conn.commit()
+            print(f"[OrgShield AI] Fast-seeded {len(records)} realistic alerts successfully.")
+            return
+        except Exception as e:
+            print(f"[OrgShield AI] Fast-seed error: {e}. Falling back to live inference seeding.")
 
     scanner = EmailThreatScanner()
     if not scanner.is_loaded:
@@ -40,7 +81,7 @@ def seed_sample_records():
                 body=p["body"],
                 reply_to=p.get("reply_to"),
                 date_str=p.get("date"),
-                model_name="isolation_forest"
+                model_name="one_class_svm"
             )
             save_scan_record(scan, status="investigating" if scan["is_threat"] else "resolved")
 

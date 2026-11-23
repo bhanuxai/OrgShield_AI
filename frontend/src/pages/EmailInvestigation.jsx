@@ -13,7 +13,9 @@ import {
   CheckCircle,
   HelpCircle,
   Hash,
-  Play
+  Play,
+  Zap,
+  Terminal
 } from 'lucide-react';
 import { api } from '../services/api';
 
@@ -35,12 +37,36 @@ const SAMPLE_TEMPLATES = [
     body: 'Hi, I am in an executive meeting and cannot take calls. Please process an immediate wire transfer of $340,000 for acquisition escrow. Account details: http://203.0.113.88/invoices/wire.pdf. Thanks, Ken.'
   },
   {
-    title: 'Legitimate Enron Meeting',
+    title: 'Account Suspension Lure',
+    sender: 'alert-4@wellsfargo-verify.loan',
+    recipients: ['treasury@enron.com'],
+    reply_to: 'security-action@phish-domain.org',
+    subject: 'Urgent: Corporate Account Suspended Due to Suspicious Activity',
+    body: 'Immediate action required. Unauthorized access attempts detected on your commercial account. Verify account credentials immediately at http://192.0.2.144/auth/verify to restore online trading access.'
+  },
+  {
+    title: 'Malware Invoice (.zip)',
+    sender: 'billing@vendor-invoices-service.info',
+    recipients: ['accounts.payable@enron.com'],
+    reply_to: 'dropzone@attacker-c2.net',
+    subject: 'Overdue Invoice #INV-882914 - Immediate Remittance Required',
+    body: 'Please find attached the past due invoice statement for services rendered in Q3. Download the remittance document package here: http://198.51.100.89/downloads/invoice_statement_oct2001.zip'
+  },
+  {
+    title: 'Legitimate Internal Meeting',
     sender: 'phillip.allen@enron.com',
     recipients: ['john.arnold@enron.com'],
     reply_to: '',
     subject: 'Natural gas pipeline volume forecast for Q4',
     body: 'John, please review the latest storage capacity projections for the El Paso pipeline before our Monday team meeting. Best regards, Phillip.'
+  },
+  {
+    title: 'Legitimate Platts Newsletter',
+    sender: 'newsletter@platts.com',
+    recipients: ['all_traders@enron.com'],
+    reply_to: '',
+    subject: 'Platts Energy Daily: Natural gas storage levels rise',
+    body: 'Daily market summary for Henry Hub cash prices and NYMEX prompt month futures. Read full report on platts.com.'
   }
 ];
 
@@ -141,27 +167,31 @@ export default function EmailInvestigation({ initialAlertId }) {
   return (
     <div className="space-y-6">
       {/* Top Interactive Scanner Panel */}
-      <div className="cyber-card p-5">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 mb-4 border-b border-slate-800/80 pb-4">
+      <div className="border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#000000]">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 mb-4 border-b-2 border-black pb-4">
           <div>
-            <h2 className="text-sm font-semibold text-white tracking-wide flex items-center gap-2">
-              <Search className="h-4 w-4 text-cyan-400" />
-              <span>Real-Time Email Threat Inspector</span>
+            <h2 className="text-sm font-black text-black tracking-tight uppercase flex items-center gap-2">
+              <span className="p-1 bg-[#FFE600] border border-black shadow-[1px_1px_0px_#000]">
+                <Search className="h-4 w-4 stroke-[2.5]" />
+              </span>
+              <span>Interactive Email Threat Inspector</span>
             </h2>
-            <p className="text-[11px] text-slate-400">
-              Submit raw RFC 2822 headers or structured fields for multi-dimensional anomaly detection
+            <p className="text-[11px] text-slate-700 font-mono mt-0.5">
+              Submit structured fields or raw RFC 2822 headers for multi-vector anomaly discovery
             </p>
           </div>
 
           {/* Quick Pre-fill Templates */}
           <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] text-slate-500 font-mono uppercase mr-1">Load Sample:</span>
+            <span className="text-[10px] text-black font-mono font-bold uppercase mr-1 bg-[#FFE600] px-1.5 py-0.5 border border-black">
+              LOAD SCENARIO:
+            </span>
             {SAMPLE_TEMPLATES.map((tmpl, idx) => (
               <button
                 key={idx}
                 type="button"
                 onClick={() => handleApplyTemplate(tmpl)}
-                className="px-2.5 py-1 rounded bg-slate-900 hover:bg-cyan-950 text-slate-300 hover:text-cyan-400 border border-slate-800 hover:border-cyan-800 text-[11px] font-mono transition-colors"
+                className="brutal-btn px-2.5 py-1 bg-white hover:bg-[#FFE600] text-black text-[10px] font-mono font-bold"
               >
                 {tmpl.title}
               </button>
@@ -173,12 +203,12 @@ export default function EmailInvestigation({ initialAlertId }) {
         <form onSubmit={handleRunScan} className="space-y-4">
           {/* Mode Switch & Model Selector */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-            <div className="flex items-center gap-1 bg-slate-900 p-1 rounded-lg border border-slate-800 text-xs font-mono">
+            <div className="flex items-center border-2 border-black shadow-[2px_2px_0px_0px_#000] text-xs font-mono font-bold">
               <button
                 type="button"
                 onClick={() => setActiveMode('fields')}
-                className={`px-3 py-1 rounded-md transition-colors ${
-                  activeMode === 'fields' ? 'bg-cyan-950 text-cyan-400 font-semibold' : 'text-slate-400 hover:text-white'
+                className={`px-3 py-1.5 transition-colors uppercase ${
+                  activeMode === 'fields' ? 'bg-[#FFE600] text-black font-black' : 'bg-white text-black hover:bg-[#FFFDF0]'
                 }`}
               >
                 Structured Fields
@@ -186,23 +216,23 @@ export default function EmailInvestigation({ initialAlertId }) {
               <button
                 type="button"
                 onClick={() => setActiveMode('raw')}
-                className={`px-3 py-1 rounded-md transition-colors ${
-                  activeMode === 'raw' ? 'bg-cyan-950 text-cyan-400 font-semibold' : 'text-slate-400 hover:text-white'
+                className={`px-3 py-1.5 border-l-2 border-black transition-colors uppercase ${
+                  activeMode === 'raw' ? 'bg-[#FFE600] text-black font-black' : 'bg-white text-black hover:bg-[#FFFDF0]'
                 }`}
               >
                 Raw RFC 2822 MIME
               </button>
             </div>
 
-            <div className="flex items-center gap-2 text-xs font-mono">
-              <span className="text-slate-400">Model Engine:</span>
+            <div className="flex items-center gap-2 text-xs font-mono font-bold">
+              <span className="text-black uppercase">Model Engine:</span>
               <select
                 value={selectedModel}
                 onChange={(e) => setSelectedModel(e.target.value)}
-                className="px-3 py-1 rounded-lg bg-slate-900 border border-slate-800 text-cyan-400 font-mono focus:outline-none focus:border-cyan-500"
+                className="px-3 py-1.5 border-2 border-black bg-white text-black font-mono font-bold shadow-[2px_2px_0px_0px_#000] focus:outline-none focus:bg-[#FFFDF0]"
               >
                 <option value="isolation_forest">Isolation Forest (Unsupervised)</option>
-                <option value="one_class_svm">One-Class SVM (Unsupervised)</option>
+                <option value="one_class_svm">One-Class SVM (RBF Boundary)</option>
                 <option value="local_outlier_factor">Local Outlier Factor (Novelty)</option>
                 <option value="rule_based_baseline">Rule-Based Baseline (Deterministic)</option>
               </select>
@@ -212,87 +242,88 @@ export default function EmailInvestigation({ initialAlertId }) {
           {activeMode === 'fields' ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400">Sender (From Address)</label>
+                <label className="text-[11px] font-mono font-black uppercase text-black">Sender (From Address)</label>
                 <input
                   type="text"
                   placeholder="e.g. support@portal-update.xyz"
                   value={sender}
                   onChange={(e) => setSender(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyan-500/60"
+                  className="w-full px-3 py-2 border-2 border-black bg-[#F4F0EA] text-xs font-mono font-bold text-black focus:outline-none focus:bg-[#FFFDF0] focus:shadow-[2px_2px_0px_#000]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400">Recipients (Comma separated)</label>
+                <label className="text-[11px] font-mono font-black uppercase text-black">Recipients (Comma separated)</label>
                 <input
                   type="text"
                   placeholder="e.g. pallen@enron.com, skilling@enron.com"
                   value={recipients}
                   onChange={(e) => setRecipients(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyan-500/60"
+                  className="w-full px-3 py-2 border-2 border-black bg-[#F4F0EA] text-xs font-mono font-bold text-black focus:outline-none focus:bg-[#FFFDF0] focus:shadow-[2px_2px_0px_#000]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400">Reply-To Address (Optional)</label>
+                <label className="text-[11px] font-mono font-black uppercase text-black">Reply-To Address (Optional)</label>
                 <input
                   type="text"
                   placeholder="e.g. harvest@bad-server.xyz"
                   value={replyTo}
                   onChange={(e) => setReplyTo(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyan-500/60"
+                  className="w-full px-3 py-2 border-2 border-black bg-[#F4F0EA] text-xs font-mono font-bold text-black focus:outline-none focus:bg-[#FFFDF0] focus:shadow-[2px_2px_0px_#000]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono text-slate-400">Subject</label>
+                <label className="text-[11px] font-mono font-black uppercase text-black">Subject Line</label>
                 <input
                   type="text"
                   placeholder="e.g. ACTION REQUIRED: Immediate system update"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyan-500/60"
+                  className="w-full px-3 py-2 border-2 border-black bg-[#F4F0EA] text-xs font-mono font-bold text-black focus:outline-none focus:bg-[#FFFDF0] focus:shadow-[2px_2px_0px_#000]"
                 />
               </div>
 
               <div className="md:col-span-2 space-y-1">
-                <label className="text-[11px] font-mono text-slate-400">Email Body Text</label>
+                <label className="text-[11px] font-mono font-black uppercase text-black">Email Body Text</label>
                 <textarea
                   rows={4}
                   placeholder="Paste or write email body here..."
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyan-500/60"
+                  className="w-full px-3 py-2 border-2 border-black bg-[#F4F0EA] text-xs font-mono font-bold text-black focus:outline-none focus:bg-[#FFFDF0] focus:shadow-[2px_2px_0px_#000]"
                 />
               </div>
             </div>
           ) : (
             <div className="space-y-1">
-              <label className="text-[11px] font-mono text-slate-400">Raw RFC 2822 Email (Headers + Body)</label>
+              <label className="text-[11px] font-mono font-black uppercase text-black">Raw RFC 2822 Email (Headers + Body)</label>
               <textarea
                 rows={8}
                 placeholder="From: ...&#10;To: ...&#10;Subject: ...&#10;&#10;Body text..."
                 value={rawEmail}
                 onChange={(e) => setRawEmail(e.target.value)}
-                className="w-full p-3 rounded-lg bg-slate-900 border border-slate-800 text-xs font-mono text-slate-200 focus:outline-none focus:border-cyan-500/60"
+                className="w-full p-3 border-2 border-black bg-[#F4F0EA] text-xs font-mono font-bold text-black focus:outline-none focus:bg-[#FFFDF0] focus:shadow-[2px_2px_0px_#000]"
               />
             </div>
           )}
 
           {errorMsg && (
-            <div className="p-3 rounded-lg bg-rose-950/60 border border-rose-800 text-rose-400 text-xs font-mono">
-              {errorMsg}
+            <div className="p-3 border-2 border-black bg-[#FFE4E6] text-black text-xs font-mono font-bold shadow-[2px_2px_0px_#000] flex items-center gap-2">
+              <AlertTriangle className="h-4 w-4 text-[#FF3366] stroke-[2.5]" />
+              <span>{errorMsg}</span>
             </div>
           )}
 
-          <div className="flex justify-end">
+          <div className="flex justify-end pt-2">
             <button
               type="submit"
               disabled={scanning}
-              className="px-5 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-medium text-xs flex items-center gap-2 shadow-lg shadow-cyan-500/20 disabled:opacity-50 transition-all font-mono"
+              className="brutal-btn px-6 py-2.5 bg-[#FFE600] hover:bg-[#FFD600] text-black font-black text-xs flex items-center gap-2 shadow-[4px_4px_0px_0px_#000] disabled:opacity-50 font-mono tracking-wider uppercase"
             >
-              <Play className={`h-3.5 w-3.5 fill-current ${scanning ? 'animate-spin' : ''}`} />
-              <span>{scanning ? 'Analyzing Anomaly Vectors...' : 'Run Forensic Threat Scan'}</span>
+              <Play className={`h-4 w-4 stroke-[2.5] fill-black ${scanning ? 'animate-spin' : ''}`} />
+              <span>{scanning ? 'SCANNING ANOMALY VECTORS...' : 'RUN FORENSIC THREAT SCAN'}</span>
             </button>
           </div>
         </form>
@@ -302,67 +333,71 @@ export default function EmailInvestigation({ initialAlertId }) {
       {scanResult && (
         <div className="space-y-6">
           {/* Risk Verdict Banner */}
-          <div className={`p-5 rounded-xl border flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${
+          <div className={`p-5 border-2 border-black shadow-[6px_6px_0px_0px_#000000] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 ${
             scanResult.is_threat
-              ? 'bg-rose-950/30 border-rose-800/80'
-              : 'bg-emerald-950/30 border-emerald-800/80'
+              ? 'bg-[#FFE4E6]'
+              : 'bg-[#DCFCE7]'
           }`}>
             <div className="flex items-start gap-4">
-              <div className={`p-3 rounded-xl ${
-                scanResult.is_threat ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'
+              <div className={`p-3 border-2 border-black shadow-[2px_2px_0px_0px_#000] flex-shrink-0 ${
+                scanResult.is_threat ? 'bg-[#FF3366] text-white' : 'bg-[#00E599] text-black'
               }`}>
                 {scanResult.is_threat ? (
-                  <ShieldAlert className="h-7 w-7" />
+                  <ShieldAlert className="h-8 w-8 stroke-[2.5]" />
                 ) : (
-                  <ShieldCheck className="h-7 w-7" />
+                  <ShieldCheck className="h-8 w-8 stroke-[2.5]" />
                 )}
               </div>
               <div>
-                <div className="flex items-center gap-3">
-                  <span className={`px-2.5 py-0.5 rounded text-xs font-mono font-bold tracking-wider uppercase ${
-                    scanResult.risk_category === 'Critical' ? 'bg-rose-950 text-rose-400 border border-rose-800' :
-                    scanResult.risk_category === 'High' ? 'bg-orange-950 text-orange-400 border border-orange-800' :
-                    scanResult.risk_category === 'Medium' ? 'bg-amber-950 text-amber-400 border border-amber-800' :
-                    'bg-emerald-950 text-emerald-400 border border-emerald-800'
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className={`px-2.5 py-0.5 text-xs font-mono font-black uppercase border-2 border-black shadow-[2px_2px_0px_0px_#000] ${
+                    scanResult.risk_category === 'Critical' ? 'bg-[#FF3366] text-white' :
+                    scanResult.risk_category === 'High' ? 'bg-[#FF8800] text-black' :
+                    scanResult.risk_category === 'Medium' ? 'bg-[#FFE600] text-black' :
+                    'bg-[#00E599] text-black'
                   }`}>
-                    {scanResult.risk_category} Risk
+                    {scanResult.risk_category} RISK LEVEL
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
-                    Model: <strong className="text-slate-200">{scanResult.model_used}</strong>
+                  <span className="text-xs font-mono font-bold text-black bg-white px-2 py-0.5 border border-black">
+                    MODEL: <strong className="text-black uppercase">{scanResult.model_used}</strong>
                   </span>
                 </div>
-                <h3 className="text-base font-semibold text-white mt-1">
-                  {scanResult.is_threat ? 'Anomalous Threat Flagged' : 'Communication Appears Legitimate'}
+                <h3 className="text-lg font-black uppercase text-black mt-1.5 tracking-tight">
+                  {scanResult.is_threat ? 'ANOMALOUS THREAT IDENTIFIED' : 'COMMUNICATION APPEARS NORMAL / BENIGN'}
                 </h3>
-                <p className="text-xs text-slate-300 mt-1 max-w-2xl">
+                <p className="text-xs text-slate-800 font-mono font-medium mt-1 max-w-2xl">
                   {scanResult.explanation}
                 </p>
               </div>
             </div>
 
-            <div className="bg-slate-900/90 p-4 rounded-xl border border-slate-800 text-right font-mono min-w-[150px]">
-              <div className="text-[10px] text-slate-400 uppercase">Threat Score</div>
-              <div className={`text-2xl font-bold ${
-                scanResult.is_threat ? 'text-rose-400' : 'text-emerald-400'
+            <div className="bg-white p-4 border-2 border-black shadow-[3px_3px_0px_0px_#000] text-right font-mono min-w-[170px] flex-shrink-0">
+              <div className="text-[10px] text-black uppercase font-black">Threat Score</div>
+              <div className={`text-3xl font-black ${
+                scanResult.is_threat ? 'text-[#FF3366]' : 'text-[#00E599]'
               }`}>
                 {scanResult.risk_score.toFixed(4)}
               </div>
-              <div className="text-[10px] text-slate-500">Threshold: {scanResult.threshold}</div>
+              <div className="text-[10px] text-black font-bold border-t border-black/20 pt-1 mt-1">
+                Threshold: {scanResult.threshold}
+              </div>
             </div>
           </div>
 
           {/* Anomaly Indicators Breakdown */}
           {scanResult.anomaly_indicators?.length > 0 && (
-            <div className="cyber-card p-5">
-              <h4 className="text-xs font-semibold text-white tracking-wider uppercase mb-3 flex items-center gap-2">
-                <AlertTriangle className="h-4 w-4 text-amber-400" />
+            <div className="border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#000000]">
+              <h4 className="text-xs font-black uppercase text-black tracking-wider mb-3 flex items-center gap-2 border-b-2 border-black pb-2">
+                <span className="p-1 bg-[#FFE600] border border-black">
+                  <AlertTriangle className="h-3.5 w-3.5 stroke-[2.5]" />
+                </span>
                 <span>Detected Anomaly Indicators ({scanResult.anomaly_indicators.length})</span>
               </h4>
               <div className="space-y-2">
                 {scanResult.anomaly_indicators.map((ind, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs">
-                    <span className="h-2 w-2 rounded-full bg-rose-400 flex-shrink-0" />
-                    <span className="text-slate-200 font-mono">{ind}</span>
+                  <div key={i} className="flex items-center gap-3 p-2.5 border-2 border-black bg-[#FFFDF0] shadow-[2px_2px_0px_#000] text-xs">
+                    <span className="h-2.5 w-2.5 bg-[#FF3366] border border-black flex-shrink-0" />
+                    <span className="text-black font-mono font-bold">{ind}</span>
                   </div>
                 ))}
               </div>
@@ -372,62 +407,73 @@ export default function EmailInvestigation({ initialAlertId }) {
           {/* Forensic Deep Dive Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Header & Routing Forensics */}
-            <div className="cyber-card p-5 space-y-4">
-              <h4 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-                <Server className="h-4 w-4 text-cyan-400" />
+            <div className="border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#000000] space-y-4">
+              <h4 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2 border-b-2 border-black pb-2">
+                <span className="p-1 bg-[#00F0FF] border border-black">
+                  <Server className="h-3.5 w-3.5 stroke-[2.5]" />
+                </span>
                 <span>Header & Routing Forensics</span>
               </h4>
 
-              <div className="space-y-3 text-xs">
-                <div className="flex justify-between p-2.5 rounded bg-slate-900/60 border border-slate-800/60">
-                  <span className="text-slate-400">Sender Domain:</span>
-                  <span className="font-mono text-cyan-400">{scanResult.email_metadata?.sender_domain || 'Unknown'}</span>
+              <div className="space-y-2 text-xs font-mono">
+                <div className="flex justify-between p-2.5 border border-black bg-[#F4F0EA]">
+                  <span className="text-slate-700 font-bold">Sender Domain:</span>
+                  <span className="font-black text-black bg-white px-1.5 border border-black">
+                    {scanResult.email_metadata?.sender_domain || 'Unknown'}
+                  </span>
                 </div>
-                <div className="flex justify-between p-2.5 rounded bg-slate-900/60 border border-slate-800/60">
-                  <span className="text-slate-400">Organization Boundary:</span>
-                  <span className={`font-mono ${
-                    scanResult.email_metadata?.sender_domain === 'enron.com' ? 'text-emerald-400' : 'text-amber-400'
+                <div className="flex justify-between p-2.5 border border-black bg-[#F4F0EA]">
+                  <span className="text-slate-700 font-bold">Boundary Verification:</span>
+                  <span className={`font-black px-1.5 border border-black ${
+                    scanResult.email_metadata?.sender_domain === 'enron.com' ? 'bg-[#00E599] text-black' : 'bg-[#FFE600] text-black'
                   }`}>
                     {scanResult.email_metadata?.sender_domain === 'enron.com' ? 'Internal (enron.com)' : 'External Origin'}
                   </span>
                 </div>
-                <div className="flex justify-between p-2.5 rounded bg-slate-900/60 border border-slate-800/60">
-                  <span className="text-slate-400">Reply-To Address:</span>
-                  <span className="font-mono text-slate-300">{scanResult.email_metadata?.reply_to || 'None (Matches From)'}</span>
+                <div className="flex justify-between p-2.5 border border-black bg-[#F4F0EA]">
+                  <span className="text-slate-700 font-bold">Reply-To Address:</span>
+                  <span className="font-bold text-black truncate max-w-[200px]">
+                    {scanResult.email_metadata?.reply_to || 'None (Matches From)'}
+                  </span>
                 </div>
-                <div className="flex justify-between p-2.5 rounded bg-slate-900/60 border border-slate-800/60">
-                  <span className="text-slate-400">Routing Hops:</span>
-                  <span className="font-mono text-slate-300">{scanResult.forensics?.routing_analysis?.hop_count || 0}</span>
+                <div className="flex justify-between p-2.5 border border-black bg-[#F4F0EA]">
+                  <span className="text-slate-700 font-bold">Routing Hops:</span>
+                  <span className="font-black text-black bg-white px-2 border border-black">
+                    {scanResult.forensics?.routing_analysis?.hop_count || 0}
+                  </span>
                 </div>
               </div>
             </div>
 
             {/* URL Forensics & Geolocation Guard */}
-            <div className="cyber-card p-5 space-y-4">
-              <h4 className="text-xs font-semibold text-white tracking-wider uppercase flex items-center gap-2">
-                <Globe className="h-4 w-4 text-cyan-400" />
+            <div className="border-2 border-black bg-white p-5 shadow-[4px_4px_0px_0px_#000000] space-y-4">
+              <h4 className="text-xs font-black uppercase text-black tracking-wider flex items-center gap-2 border-b-2 border-black pb-2">
+                <span className="p-1 bg-[#FFE600] border border-black">
+                  <Globe className="h-3.5 w-3.5 stroke-[2.5]" />
+                </span>
                 <span>URL & Geolocation Intelligence</span>
               </h4>
 
-              <div className="space-y-3 text-xs">
+              <div className="space-y-3 text-xs font-mono">
                 {/* Geolocation Verdict */}
-                <div className="p-3 rounded bg-slate-900/60 border border-slate-800/60">
-                  <div className="text-[11px] text-slate-400 mb-1">Public IP Geolocation Status:</div>
+                <div className="p-3 border border-black bg-[#F4F0EA]">
+                  <div className="text-[10px] text-slate-700 font-bold uppercase mb-1">Public IP Geolocation Status:</div>
                   {scanResult.forensics?.geolocation_intelligence?.available ? (
-                    <div className="font-mono space-y-1 text-slate-200">
+                    <div className="space-y-1 text-black font-bold">
                       <div>IP: {scanResult.forensics.geolocation_intelligence.primary_public_ip}</div>
-                      <div className="text-cyan-400">
+                      <div className="text-black bg-[#FFE600] px-1 inline-block border border-black">
                         {scanResult.forensics.geolocation_intelligence.city}, {scanResult.forensics.geolocation_intelligence.country} ({scanResult.forensics.geolocation_intelligence.asn})
                       </div>
-                      <p className="text-[10px] text-slate-500 italic mt-1">
+                      <p className="text-[10px] text-slate-600 italic mt-1 font-normal">
                         {scanResult.forensics.geolocation_intelligence.disclaimer}
                       </p>
                     </div>
                   ) : (
-                    <div className="font-mono text-slate-400">
-                      <span className="text-amber-400">Unavailable</span> - {scanResult.forensics?.geolocation_intelligence?.reason || 'No routable public IP in headers.'}
-                      <p className="text-[10px] text-slate-500 italic mt-1">
-                        OrgShield AI does not fabricate geographic coordinates for private RFC 1918 or missing IPs.
+                    <div className="text-slate-700 font-bold">
+                      <span className="bg-[#FFE600] text-black px-1.5 py-0.5 border border-black mr-1">UNAVAILABLE</span>
+                      - {scanResult.forensics?.geolocation_intelligence?.reason || 'No routable public IP in headers.'}
+                      <p className="text-[10px] text-slate-500 italic mt-1 font-normal">
+                        OrgShield AI strictly avoids fabricating fake coordinates for RFC 1918 private IPs.
                       </p>
                     </div>
                   )}
@@ -435,18 +481,18 @@ export default function EmailInvestigation({ initialAlertId }) {
 
                 {/* Detected URLs */}
                 <div>
-                  <div className="text-[11px] text-slate-400 mb-1.5">URLs Detected in Message:</div>
+                  <div className="text-[10px] text-slate-700 font-bold uppercase mb-1">URLs Detected in Message:</div>
                   {scanResult.email_metadata?.urls?.length > 0 ? (
-                    <div className="space-y-1 max-h-32 overflow-y-auto">
+                    <div className="space-y-1.5 max-h-32 overflow-y-auto">
                       {scanResult.email_metadata.urls.map((u, i) => (
-                        <div key={i} className="flex items-center gap-2 p-2 rounded bg-slate-900 font-mono text-[11px] text-cyan-400 break-all border border-slate-800">
-                          <LinkIcon className="h-3 w-3 flex-shrink-0" />
-                          <span>{u}</span>
+                        <div key={i} className="flex items-center gap-2 p-2 bg-white border border-black font-mono text-[11px] text-black break-all shadow-[1px_1px_0px_#000]">
+                          <LinkIcon className="h-3.5 w-3.5 flex-shrink-0 text-[#FF3366] stroke-[2.5]" />
+                          <span className="font-bold">{u}</span>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <span className="text-slate-500 font-mono text-xs">No URLs found in body or headers.</span>
+                    <span className="text-slate-600 font-mono text-xs font-bold">No URLs found in body or headers.</span>
                   )}
                 </div>
               </div>

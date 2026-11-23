@@ -4,31 +4,85 @@
 
 @layer base {
   body {
-    @apply bg-[#070A12] text-slate-200 font-sans;
+    @apply bg-[#F4F0EA] text-black font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
 
-/* Custom cyber glass scrollbar */
+/* Brutalist Bold Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #E5E0D8;
+  border-left: 2px solid #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
-  border-radius: 3px;
+  background: #FFE600;
+  border: 2px solid #000000;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0EA5E9;
+  background: #000000;
 }
 
+/* Neo-Brutalist Core Component Styles */
+.brutal-card {
+  @apply bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] transition-all;
+}
+
+.brutal-card:hover {
+  @apply shadow-[5px_5px_0px_0px_#000000] -translate-x-0.5 -translate-y-0.5;
+}
+
+.brutal-card-flat {
+  @apply bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000];
+}
+
+.brutal-btn {
+  @apply border-2 border-black font-bold uppercase tracking-wider shadow-[3px_3px_0px_0px_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_#000000] transition-all;
+}
+
+.brutal-badge {
+  @apply inline-flex items-center gap-1 border-2 border-black font-mono font-bold uppercase text-[10px] tracking-wide px-2 py-0.5 shadow-[2px_2px_0px_0px_#000000];
+}
+
+.brutal-input {
+  @apply border-2 border-black bg-white text-black font-mono focus:outline-none focus:bg-amber-50 focus:shadow-[3px_3px_0px_0px_#000000] transition-all;
+}
+
+/* Backward-compatible aliasing */
 .cyber-card {
-  @apply bg-[#0B0F19]/90 border border-slate-800/80 rounded-xl shadow-xl backdrop-blur-md;
+  @apply bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000000] text-black;
 }
 
 .cyber-card-glow {
-  @apply bg-[#0B0F19]/90 border border-cyan-500/30 rounded-xl shadow-[0_0_20px_rgba(14,165,233,0.1)] backdrop-blur-md;
+  @apply bg-[#FFFDF0] border-2 border-black shadow-[4px_4px_0px_0px_#FFE600] text-black;
+}
+
+/* Caution Hazard Stripes */
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #000000,
+    #000000 12px,
+    #FFE600 12px,
+    #FFE600 24px
+  );
+}
+
+.hazard-stripes-danger {
+  background: repeating-linear-gradient(
+    -45deg,
+    #000000,
+    #000000 12px,
+    #FF3366 12px,
+    #FF3366 24px
+  );
+}
+
+/* Dot Grid Background */
+.dot-grid {
+  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
 }

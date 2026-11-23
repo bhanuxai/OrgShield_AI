@@ -26,6 +26,14 @@ async def lifespan(app: FastAPI):
     # Startup: initialize database tables
     print("[OrgShield AI] Initializing SQLite database...")
     init_db()
+
+    # Automatically seed benchmark records if database alerts table is empty
+    try:
+        from scripts.seed_database import seed_sample_records
+        seed_sample_records()
+    except Exception as e:
+        print(f"[OrgShield AI] Auto-seed check skipped: {e}")
+
     print("[OrgShield AI] Pre-loading inference models...")
     scanner = EmailThreatScanner()
     if scanner.is_loaded:
